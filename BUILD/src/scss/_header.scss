@@ -8,6 +8,10 @@ header{
   .logo{
 	padding:0 $HEADER_PADDING $HEADER_PADDING 0;
 	max-width: 100%;
+	background: url(img/swr-logo-single-line.svg) top left no-repeat;
+	background-size: 100% auto;
+	margin-right:$HEADER_PADDING;
+	height:50px;
   }
 
   .logo h1 {

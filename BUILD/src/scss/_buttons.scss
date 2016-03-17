@@ -17,13 +17,23 @@ button {
   }
 
   a:hover,
+  a:focus,
   &.active a {
 	background-color: $BUTTON_HIGHLIGHT_COLOR;
-	box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.5);
   }
 }
 
-header button a {
-  background-color: black;
-  color:$RED;
+header button {
+
+  a{
+	background-color: black;
+	color:$MENU_BUTTON_COLOR;
+  }
+
+
+  a:hover,
+  a:focus,
+  &.active a {
+	background-color: $BUTTON_HIGHLIGHT_COLOR;
+  }
 }

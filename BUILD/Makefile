@@ -22,8 +22,13 @@ run: deploy-local
 run-static: deploy-local-static
 	open -a "/Applications/Google Chrome.app" 'http://swruk.local/swruk-html/html'
 
+deploy-static:
+	node scripts/deploy.js
+
 deploy:
 	# deploy to AWS here
+
+
 
 watch: run-static
 	watchman watch ./src
