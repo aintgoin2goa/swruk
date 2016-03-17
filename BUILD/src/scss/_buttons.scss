@@ -1,0 +1,29 @@
+
+button {
+  background-color: transparent;
+  border-radius:0;
+  border:0;
+  margin:0;
+  padding:0;
+
+  a {
+	background-color: $BUTTON_BG;
+	text-decoration: none;
+	color:$BUTTON_COLOR;
+	display:inline-block;
+	padding:5px;
+	border-radius:1px;
+	@include transition(all 250ms linear);
+  }
+
+  a:hover,
+  &.active a {
+	background-color: $BUTTON_HIGHLIGHT_COLOR;
+	box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.5);
+  }
+}
+
+header button a {
+  background-color: black;
+  color:$RED;
+}

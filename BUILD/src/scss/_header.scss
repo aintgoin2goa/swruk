@@ -1,0 +1,16 @@
+$HEADER_PADDING: 10px;
+
+header{
+  margin:0;
+  width:100%;
+  background-color:$HEADER_BG;
+
+  .logo{
+	padding:0 $HEADER_PADDING $HEADER_PADDING 0;
+	max-width: 100%;
+  }
+
+  .logo h1 {
+	@include visuallyHidden;
+  }
+}

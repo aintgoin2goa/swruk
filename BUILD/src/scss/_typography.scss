@@ -1,0 +1,37 @@
+@include font-face("shenzhenindustrial", "fonts/shenzhenindustrial/shenzhenindustrial", bold, normal);
+
+$TITLE_FONT_FAMILY: "shenzhenindustrial", arial, sans-serif;
+$BODY_COPY_FONT_FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body{
+  font-family: $BODY_COPY_FONT_FAMILY;
+  font-size: 16px;
+}
+
+h1{
+  text-transform: uppercase;
+  font-family: $TITLE_FONT_FAMILY;
+  font-size: 2em;
+}
+
+h2{
+  text-transform: uppercase;
+  font-family: $TITLE_FONT_FAMILY;
+  font-size: 1.5em;
+}
+
+h3{
+  text-transform: uppercase;
+  font-family: $TITLE_FONT_FAMILY;
+  font-size:1.2em;
+}
+
+h4{
+  text-transform: uppercase;
+  font-family: $BODY_COPY_FONT_FAMILY;
+  font-size: 1.2em;
+}
+
+a{
+  color:$RED;
+}
