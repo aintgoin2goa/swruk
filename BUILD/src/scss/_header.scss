@@ -3,18 +3,44 @@ $HEADER_PADDING: 10px;
 header{
   margin:0;
   width:100%;
-  background-color:$HEADER_BG;
+  background:$HEADER_BG url('img/hands.svg') left top no-repeat;
+  background-size: 50px;
+  position: relative;
+
 
   .logo{
-	padding:0 $HEADER_PADDING $HEADER_PADDING 0;
+	padding:0 60px $HEADER_PADDING 0;
 	max-width: 100%;
-	background: url(img/swr-logo-single-line.svg) top left no-repeat;
-	background-size: 100% auto;
-	margin-right:$HEADER_PADDING;
-	height:50px;
+	font-size:30px;
+	margin:0 $HEADER_PADDING 0 45px;
+	letter-spacing: -1px;
+	line-height: 0.9em;
+	padding-top:3px;
+	height:$HEADER_HEIGHT_XS;
+
+	@include media($BREAKPOINT_S){
+	  height: $HEADER_HEIGHT_S;
+	}
+
+	span {
+	  white-space: nowrap;
+	}
   }
 
-  .logo h1 {
-	@include visuallyHidden;
+  .menu-button {
+	position:absolute;
+	top:0;
+	right:0;
+	font-size:1em;
   }
 }
+
+header.fixed {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  box-shadow: 0px 10px 5px -5px rgba(0,0,0,0.3);
+  z-index:3;
+}
+

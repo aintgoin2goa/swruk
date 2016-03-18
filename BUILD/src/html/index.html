@@ -6,66 +6,66 @@
 	<link rel="stylesheet" type="text/css" href="../styles.css">
     <title>Solidarity with Refugees</title>
 </head>
-<body>
+<body class="fixed-header">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=127565120676683";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="canvas">
-	<header>
-		<div class="logo">
-			<h1>Solidarity with Refugees</h1>
-		</div>
+<header class="fixed">
+	<h1 class="logo">Solidarity <span>with Refugees</span></h1>
 
 	<button class="menu-button">
-		<a href="#menu">MENU</a>
+		<a href="#menu">
+
+			<span>MENU</span>
+		</a>
 	</button>
 
-	</header>
-	<section class="home-page-content crisis">
-			<h1>CRISIS</h1>
-			<h3>Why We're here</h3>
-			<ul>
-				<li>This is the worst refugee crisis since WWII.</li>
-				<li>Refugees are risking their lives to seek safety. Almost 2,700 have lost their lives in the Mediterranean this year.</li>
-				<li>The British Government’s response is inadequate. 4,000 annual resettlement places have been offered - 12 people per day - for five years.</li>
-			</ul>
-	</section>
-	<section class="home-page-content campaign">
-		<h1>CAMPAIGN</h1>
-		<h3>Solutions we can campaign for:</h3>
-		<p>
-			The organisations supporting this march have a range of campaigns. Here are four fundamental starting points:
-		</p>
-		<ol>
+</header>
 
-			<li>The UK should take a fair and proportionate share of refugees, both those already within the EU and those still outside it.</li>
-			<li>Safe and legal routes to the UK, as well as to the EU, need to be established. Such routes ought to include:
-				<ol>
-					<li>Humanitarian visas – that is to say visas for the specific purpose of seeking asylum on arrival – issued in the country of departure or intended embarkation.</li>
-					<li>Resettlement schemes, accepting refugees directly from the country of persecution or from neighbouring states.</li>
-					<li>Humane family reunion policies, such as allowing child refugees in the UK to be joined by adult family members.</li>
-				</ol>
-			</li>
-			<li>
-				Safe and legal routes within the EU, including the UK, should be established. For instance:
-				<ol>
-					<li>A relocation scheme to take refugees from destitute conditions elsewhere in Europe;</li>
-					<li> A suspension of the ‘Dublin’ system, save for the purpose of family reunification. </li>
-				</ol>
-			</li>
-			<li>
-				There should be access to fair and thorough procedures to determine eligibility for international protection wherever it is sought.
-			</li>
-		</ol>
+<div id="canvas" class="home">
+
+
+	<section class="home-section who">
+		<h4>
+			Some introductory text about what SWR is all about
+		</h4>
+		<p>
+			<a class="read-more-link" href="#">More</a>
+		</p>
 	</section>
-	<section class="home-page-content action">
-		<h1>ACTION</h1>
-		<h3>How you can help the campaign:</h3>
-		<ul>
-			<li>Volunteer to organise future actions.</li>
-			<li>Donate so we can continue to grow and organise.</li>
-		</ul>
+
+	<section class="home-section news">
+		<h1>This is where the latest news goes</h1>
+		<p>
+			This will show the latest blog post, or optinally some kind of promo - whatever needs highlighting
+		</p>
+		<p>
+			<a class="read-more-link" href="#">More</a>
+		</p>
 	</section>
+
+	<section class="home-section facebook">
+		<h1>Facebook</h1>
+		<div class="facebook-container">
+			<div class="fb-page" data-href="https://www.facebook.com/Solidaritywithrefugees" data-tabs="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/Solidaritywithrefugees"><a href="https://www.facebook.com/Solidaritywithrefugees">Solidarity with Refugees</a></blockquote></div></div>
+		</div>
+	</section>
+
+	<section class="home-section twitter">
+		<h1>Twitter</h1>
+		<a class="twitter-timeline" href="https://twitter.com/SwR_UK" data-widget-id="710782826786983936" data-chrome="noheader noscrollbar transparent" data-tweet-limit="3">Tweets by @SwR_UK</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</section>
+
+
 	<footer>
-		&copy; 2015 blah blah
+		<p>&copy; 2015 blah blah</p>
 	</footer>
 </div>
 

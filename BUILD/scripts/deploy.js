@@ -4,6 +4,7 @@ var AWS = require('aws-sdk');
 var fs = require('fs');
 var path = require('path');
 var colors = require('colors');
+var mime = require('mime');
 
 var REGION = 'eu-west-1';
 
@@ -13,18 +14,13 @@ var dist = path.resolve(__dirname, '../static/');
 
 var foldersToUpload = [
 	dist,
-	path.resolve(dist, 'fonts/'),
+	path.resolve(dist, 'fonts/shenzhenindustrial/'),
 	path.resolve(dist, 'img/'),
 	path.resolve(dist, 'html/')
 ];
 
 function getContentType(filename){
-	var extension = filename.split('.').reverse()[0];
-	switch(extension){
-		case 'html': return 'text/html';
-		case 'css' : return 'text/css';
-		case 'js' : return 'text/javascript';
-	}
+	return mime.lookup(filename);
 }
 
 function uploadFile(file){

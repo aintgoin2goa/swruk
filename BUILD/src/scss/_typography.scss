@@ -5,6 +5,7 @@ $BODY_COPY_FONT_FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 body{
   font-family: $BODY_COPY_FONT_FAMILY;
+  color:$BODY_TEXT_COLOR;
   font-size: 16px;
 }
 
@@ -33,5 +34,16 @@ h4{
 }
 
 a{
-  color:$RED;
+  color:$DEFAULT_LINK_COLOR;
+}
+
+.read-more-link {
+  text-decoration: none;
+  background-color:white;
+  padding:0.25em 0.5em;
+
+  &:after {
+	content: '⇢';
+	padding-left:0.5em;
+  }
 }

@@ -2,6 +2,9 @@
 @import "neat/neat";
 @import "mixins";
 
+@import "dimensions";
+@import "palette";
+
 
 body, html{
   margin:0;
@@ -9,7 +12,7 @@ body, html{
 }
 
 body{
-  background: white;
+  background: $YELLOW;
 }
 
 * {
@@ -20,20 +23,29 @@ body{
   position: relative;
   z-index: 2;
   background-color: white;
+  padding-top:$HEADER_HEIGHT_XS;
   @include transition(250ms all ease-out);
+  @include transform(translate3d(0, 0, 0));
+  @include filter(brightness(1));
+
+  @include media($BREAKPOINT_S){
+	padding-top: $HEADER_HEIGHT_S;
+  }
 
 
   &.off{
-	@include transform(translate3d(50%, 0, 0));
+	@include transform(translate3d(-50%, 0, 0));
 	@include filter(brightness(0.4));
   }
 }
 
-@import "palette";
+
 @import "typography";
 @import "buttons";
 
 
 @import "header";
 @import "nav";
+@import "homepage";
+@import "footer";
 
