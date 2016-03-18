@@ -26,13 +26,6 @@ header{
 	  white-space: nowrap;
 	}
   }
-
-  .menu-button {
-	position:absolute;
-	top:0;
-	right:0;
-	font-size:1em;
-  }
 }
 
 header.fixed {
@@ -43,4 +36,36 @@ header.fixed {
   box-shadow: 0px 10px 5px -5px rgba(0,0,0,0.3);
   z-index:3;
 }
+
+.menu-button {
+  position:absolute;
+  top:0;
+  right:0;
+  text-transform: uppercase;
+
+  * {
+	display: inline-block;
+	vertical-align: middle;
+  }
+
+  .menu-icon {
+	fill: $YELLOW;
+  }
+
+  .close-icon {
+	fill: $YELLOW;
+	display:none;
+  }
+
+  & a[data-state="open"]{
+	.menu-icon {
+	  display:none;
+	}
+	.close-icon {
+	  display:inline-block;
+	}
+  }
+}
+
+
 

@@ -12,6 +12,11 @@ nav{
 	top:0;
 	right:0;
 	z-index: 1;
+	visibility: hidden;
+  }
+
+  .js &.open {
+	visibility:visible;
   }
 
   h4{
