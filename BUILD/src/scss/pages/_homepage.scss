@@ -1,0 +1,93 @@
+.home-section {
+
+  padding-bottom: $CONTENT_PADDING;
+  position:relative;
+  background:transparent;
+  overflow: hidden;
+
+  p, h4 {
+	padding:0 $CONTENT_PADDING;
+  }
+
+  & > *:first-child {
+	margin-top:0;
+  }
+
+  & > *:last-child {
+	margin-bottom:0;
+  }
+
+	h1 {
+	  font-size:1.2em;
+	  color:$HOME_HEADER_COLOR;
+	  background-color: $HOME_HEADER_BG;
+	  padding:0.25em 0.5em;
+	}
+
+  	.home-section-icon {
+	  fill: $HOME_HEADER_COLOR;
+	}
+
+}
+
+.home-section.who {
+  overflow: hidden;
+  width:100%;
+
+  & > *:first-child{
+	margin-top:1em;
+  }
+
+  figure {
+	width:100%;
+	margin:0;
+
+	img {
+	  width:100%;
+	  box-shadow: 0px 0px 3px 2px white;
+	}
+  }
+
+  @include media($BREAKPOINT_M){
+	@include span-columns(12);
+	@include omega;
+
+	figure {
+	  width:50%;
+	  margin-top:$CONTENT_PADDING;
+	  float:right;
+	}
+
+	p {
+	  float:left;
+	  clear:left;
+	  width:50%;
+	}
+  }
+
+
+
+}
+
+.home-section.who
+
+.home-section.news {
+
+}
+
+.home-section.facebook{
+
+  .facebook-container{
+	width:100%;
+	max-width: 340px;
+	margin:0 auto;
+  }
+
+}
+
+.home-section.twitter{
+
+  h1{
+	margin-bottom:0;
+  }
+}

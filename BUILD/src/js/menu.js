@@ -15,7 +15,7 @@ function showMenu(canvas, menu, e){
 
 function hideMenu(canvas, menu){
 	canvas.classList.remove(offCanvasClass);
-	setTimeout(() => menu.classList.remove(menuOpenClass), 250);
+	menu.classList.remove(menuOpenClass);
 	updateMenuButtonsText(menuOpenButtonText, 'closed');
 }
 

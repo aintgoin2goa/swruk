@@ -1,10 +1,14 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
-@import "mixins";
+@import "lib/mixins";
 
-@import "dimensions";
-@import "palette";
+@import "lib/dimensions";
+@import "lib/palette";
+@import "lib/typography";
+@import "lib/buttons";
+@import "lib/layout";
 
+$DEFAULT_ANIMATION_LENGTH: 250ms;
 
 body, html{
   margin:0;
@@ -12,40 +16,23 @@ body, html{
 }
 
 body{
-  background: $YELLOW;
+  background:url(img/refugees-train.jpg) center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 * {
   box-sizing: border-box;
 }
 
-#canvas{
-  position: relative;
-  z-index: 2;
-  background-color: white;
-  padding-top:$HEADER_HEIGHT_XS;
-  @include transition(250ms all ease-out);
-  @include transform(translate3d(0, 0, 0));
-  @include filter(brightness(1));
-
-  @include media($BREAKPOINT_S){
-	padding-top: $HEADER_HEIGHT_S;
-  }
 
 
-  &.off{
-	@include transform(translate3d(-50%, 0, 0));
-	@include filter(brightness(0.4));
-  }
-}
 
 
-@import "typography";
-@import "buttons";
+@import "components/canvas";
+@import "components/header";
+@import "components/nav";
+@import "components/footer";
 
-
-@import "header";
-@import "nav";
-@import "homepage";
-@import "footer";
+@import "pages/homepage";
 

@@ -1,0 +1,11 @@
+footer {
+  box-sizing: content-box;
+  background-color:black;
+  color:white;
+
+  p {
+	padding: $CONTENT_PADDING;
+	margin:0;
+	font-size:0.5em;
+  }
+}
