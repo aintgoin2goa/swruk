@@ -10,6 +10,10 @@
 	padding-top: $HEADER_HEIGHT_L;
   }
 
+  @include media($BREAKPOINT_XL) {
+	padding-top: $HEADER_HEIGHT_XL;
+  }
+
 
   &:after{
 	content:'';
@@ -31,6 +35,12 @@
 
 	@include media($BREAKPOINT_M){
 	  @include transform(translate3d(-30%, 0, 0));
+	}
+
+	@include media($BREAKPOINT_L) {
+	  @include transform(translate3d(0, 0, 0));
+	  @include filter(brightness(1));
+
 	}
   }
 }

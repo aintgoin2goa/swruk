@@ -28,13 +28,19 @@ nav{
 	}
 
 	@include media($BREAKPOINT_L) {
+	  height:$NAV_STRIP_HEIGHT;
 	  position: fixed;
 	  width:100%;
-	  top:60px;
+	  top:$NAV_STRIP_TOP_L;
 	  left:0;
 	  bottom:auto;
 	  z-index: 5;
 	  @include transform(translate3d(0,0,0));
+	}
+
+	@include media($BREAKPOINT_XL) {
+	  top:$NAV_STRIP_TOP_XL;
+	  text-align: left;
 	}
 
 

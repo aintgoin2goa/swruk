@@ -23,6 +23,11 @@ header{
 	  height: $HEADER_HEIGHT_L;
 	}
 
+	@include media($BREAKPOINT_XL) {
+	  font-size: 80px;
+	  height: $HEADER_HEIGHT_XL;
+	}
+
 	span {
 	  white-space: nowrap;
 	}

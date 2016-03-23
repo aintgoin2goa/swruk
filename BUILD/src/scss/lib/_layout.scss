@@ -1,5 +1,5 @@
 .grid-container {
-  @include outer-container;
+  @include outer-container(100%);
 }
 
 .column{
@@ -13,6 +13,6 @@
   }
 
   @include media($BREAKPOINT_XL) {
-
+	@include span-columns(3);
   }
 }

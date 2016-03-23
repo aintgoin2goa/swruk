@@ -28,6 +28,10 @@
 	  fill: $HOME_HEADER_COLOR;
 	}
 
+  @include media($BREAKPOINT_XL) {
+	margin-top:$CONTENT_PADDING;
+  }
+
 }
 
 .home-section.who {
@@ -38,9 +42,14 @@
 	margin-top:1em;
   }
 
+  p:first-of-type {
+	font-size: 1.2em;
+  }
+
   figure {
-	width:100%;
-	margin:0;
+	width:90%;
+	margin:0 auto;
+	padding:5px;
 
 	img {
 	  width:100%;
@@ -53,8 +62,9 @@
 	@include omega;
 
 	figure {
-	  width:50%;
+	  width:45%;
 	  margin-top:$CONTENT_PADDING;
+	  margin-right:$CONTENT_PADDING;
 	  float:right;
 	}
 
@@ -62,6 +72,23 @@
 	  float:left;
 	  clear:left;
 	  width:50%;
+	}
+  }
+
+  @include media($BREAKPOINT_XL) {
+	@include reset-all;
+	@include span-columns(6);
+
+	p{
+	  width:40%;
+	  float:right;
+	  clear:right;
+	}
+
+	figure {
+	  float:left;
+	  width:55%;
+	  margin:$CONTENT_PADDING 0 0 $CONTENT_PADDING;
 	}
   }
 
@@ -81,6 +108,20 @@
 	width:100%;
 	max-width: 340px;
 	margin:0 auto;
+  }
+
+  .facebook-container.full {
+	display:none;
+  }
+
+  @include media($BREAKPOINT_L){
+	.facebook-container.small {
+	  display:none;
+	}
+
+	.facebook-container.full {
+	  display:block;
+	}
   }
 
 }
