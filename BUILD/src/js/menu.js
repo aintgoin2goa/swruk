@@ -1,7 +1,7 @@
 'use strict';
 const offCanvasClass = 'off';
 const canvasSelector = '#canvas';
-const menuButtonSelector = '.menu-button a';
+const menuButtonSelector = '.menu-button';
 const menuOpenButtonText = 'Menu';
 const menuCloseButtonText = 'Close';
 const menuOpenClass = 'open';
