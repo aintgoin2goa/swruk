@@ -5,7 +5,7 @@
   background:transparent;
   overflow: hidden;
 
-  p, h4 {
+  p, h4, h3 {
 	padding:0 $CONTENT_PADDING;
   }
 
@@ -96,10 +96,14 @@
 
 }
 
-.home-section.who
-
 .home-section.news {
+	h3 {
+	  margin-bottom:0;
+	}
 
+  p {
+	margin-top:0.5em;
+  }
 }
 
 .home-section.facebook{
@@ -127,8 +131,21 @@
 }
 
 .home-section.twitter{
-
   h1{
 	margin-bottom:0;
+  }
+}
+
+.news-facebook-column {
+
+  @include media($BREAKPOINT_L) {
+	@include reset-all;
+	@include span-columns(8);
+
+	& .facebook, & .news {
+	  @include span-columns(4 of 8);
+	}
+
+
   }
 }
