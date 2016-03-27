@@ -1,2 +1,32 @@
 $MQ_SUPPORTED: false;
 @import "imports";
+
+.oldie {
+  #canvas {
+	min-width:1000px;
+  }
+
+
+  .home-section.who {
+	width:100%;
+  }
+
+
+  .news-facebook-column {
+	  width:60%;
+	  overflow:hidden;
+
+		.home-section {
+		  width:45%;
+		}
+  }
+
+  nav.menu {
+	z-index:50;
+	top:90px;
+
+	h4 {
+	  display:none;
+	}
+  }
+}

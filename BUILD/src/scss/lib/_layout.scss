@@ -1,5 +1,6 @@
 .grid-container {
   @include outer-container(100%);
+  overflow: hidden;
 }
 
 .column{
@@ -15,4 +16,5 @@
   @include respond($BREAKPOINT_XL) {
 	@include span-columns(3);
   }
+
 }
