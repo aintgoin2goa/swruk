@@ -12,7 +12,7 @@ function init(){
 
 	let html = document.querySelector('html');
 	html.classList.add('js');
-	html.classList('mustard');
+	html.classList.add('mustard');
 	components.forEach(c => c.init());
 }
 

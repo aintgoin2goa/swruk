@@ -1,6 +1,6 @@
 
 build-static: clean-static
-	cp -r src/html/ static/html/
+	node scripts/buildHTML.js
 	cp -r src/img/ static/img/
 	cp -r src/fonts/ static/fonts/
 	cp src/js/html5shiv.min.js static/
