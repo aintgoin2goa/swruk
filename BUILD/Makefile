@@ -3,7 +3,9 @@ build-static: clean-static
 	cp -r src/html/ static/html/
 	cp -r src/img/ static/img/
 	cp -r src/fonts/ static/fonts/
+	cp src/js/html5shiv.min.js static/
 	node-sass src/scss/main.scss static/styles.css
+	node-sass src/scss/ie8.scss static/oldie.css
 	webpack
 
 clean-static:

@@ -3,7 +3,18 @@
 <head lang="en">
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<!--[if lte IE 9]>
+		<link rel="stylesheet" href="../oldie.css">
+		<script src="../html5shiv.min.js"></script>
+	<![endif]-->
+	<!--[if gt IE 8]><!-->
+		<link rel="stylesheet" type="text/css" href="../styles.css">
+
+	<!--<![endif]-->
+	<script>
+		window.CTM = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
+	</script>
+
     <title>Solidarity with Refugees</title>
 </head>
 <body class="fixed-header">

@@ -1,0 +1,38 @@
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "lib/mixins";
+
+@import "lib/dimensions";
+@import "lib/palette";
+@import "lib/typography";
+@import "lib/buttons";
+@import "lib/layout";
+
+$DEFAULT_ANIMATION_LENGTH: 250ms;
+
+body, html{
+  margin:0;
+  padding:0;
+}
+
+.mustard body {
+  background:url(img/hungary-border.jpg) center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+@import "components/canvas";
+@import "components/header";
+@import "components/nav";
+@import "components/footer";
+
+@import "pages/homepage";

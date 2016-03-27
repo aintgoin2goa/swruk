@@ -6,7 +6,7 @@ nav{
   text-align:right;
   background-color: $NAV_BG;
 
-  @include media($BREAKPOINT_L) {
+  @include respond($BREAKPOINT_L) {
 	position:absolute;
 	top:50px;
   }
@@ -23,11 +23,11 @@ nav{
 	@include transform(translate3d(100%,0,0));
 	@include transition(all $DEFAULT_ANIMATION_LENGTH ease-out);
 
-	@include media($BREAKPOINT_M){
+	@include respond($BREAKPOINT_M){
 	  width:30%;
 	}
 
-	@include media($BREAKPOINT_L) {
+	@include respond($BREAKPOINT_L) {
 	  height:$NAV_STRIP_HEIGHT;
 	  position: fixed;
 	  width:100%;
@@ -38,7 +38,7 @@ nav{
 	  @include transform(translate3d(0,0,0));
 	}
 
-	@include media($BREAKPOINT_XL) {
+	@include respond($BREAKPOINT_XL) {
 	  top:$NAV_STRIP_TOP_XL;
 	  text-align: left;
 	}
@@ -71,7 +71,7 @@ nav{
 	margin:0;
 	border-bottom:1px solid $HEADER_BG;
 
-	@include media($BREAKPOINT_L) {
+	@include respond($BREAKPOINT_L) {
 	  display: inline-block;
 	  border:0;
 	}

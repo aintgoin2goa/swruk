@@ -11,7 +11,7 @@ body{
   color:$BODY_TEXT_COLOR;
   font-size: 16px;
 
-  @include media($BREAKPOINT_L){
+  @include respond($BREAKPOINT_L){
 	font-size:18px;
   }
 }

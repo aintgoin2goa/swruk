@@ -28,7 +28,7 @@
 	  fill: $HOME_HEADER_COLOR;
 	}
 
-  @include media($BREAKPOINT_XL) {
+  @include respond($BREAKPOINT_XL) {
 	margin-top:$CONTENT_PADDING;
   }
 
@@ -57,7 +57,7 @@
 	}
   }
 
-  @include media($BREAKPOINT_M){
+  @include respond($BREAKPOINT_M){
 	@include span-columns(12);
 	@include omega;
 
@@ -75,7 +75,7 @@
 	}
   }
 
-  @include media($BREAKPOINT_XL) {
+  @include respond($BREAKPOINT_XL) {
 	@include reset-all;
 	@include span-columns(6);
 
@@ -118,7 +118,7 @@
 	display:none;
   }
 
-  @include media($BREAKPOINT_L){
+  @include respond($BREAKPOINT_L){
 	.facebook-container.small {
 	  display:none;
 	}
@@ -138,7 +138,7 @@
 
 .news-facebook-column {
 
-  @include media($BREAKPOINT_L) {
+  @include respond($BREAKPOINT_L) {
 	@include reset-all;
 	@include span-columns(8);
 

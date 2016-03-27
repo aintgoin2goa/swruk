@@ -4,3 +4,13 @@
   left: -9999px !important;
 }
 
+@mixin respond($breakpoint) {
+  @if($MQ_SUPPORTED){
+	@include media($breakpoint){
+	  @content;
+	}
+  }
+  @else {
+	@content;
+  }
+}

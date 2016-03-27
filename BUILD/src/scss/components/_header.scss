@@ -3,7 +3,7 @@ $HEADER_PADDING: 10px;
 header{
   margin:0;
   width:100%;
-  background:$HEADER_BG url('img/hands.svg') left top no-repeat;
+  background:$HEADER_BG;
   background-size: 50px;
   position: relative;
 
@@ -18,12 +18,12 @@ header{
 	padding-top:3px;
 	height:$HEADER_HEIGHT_XS;
 
-	@include media($BREAKPOINT_L) {
+	@include respond($BREAKPOINT_L) {
 	  font-size:50px;
 	  height: $HEADER_HEIGHT_L;
 	}
 
-	@include media($BREAKPOINT_XL) {
+	@include respond($BREAKPOINT_XL) {
 	  font-size: 80px;
 	  height: $HEADER_HEIGHT_XL;
 	}
@@ -50,7 +50,7 @@ header.fixed {
   text-transform: uppercase;
   font-size:1.2em;
 
-  @include media($BREAKPOINT_L) {
+  @include respond($BREAKPOINT_L) {
 	display: none;
   }
 
