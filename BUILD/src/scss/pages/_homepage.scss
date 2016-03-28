@@ -17,17 +17,6 @@
 	margin-bottom:0;
   }
 
-	h1 {
-	  font-size:1.2em;
-	  color:$HOME_HEADER_COLOR;
-	  background-color: $HOME_HEADER_BG;
-	  padding:0.25em 0.5em;
-	}
-
-  	.home-section-icon {
-	  fill: $HOME_HEADER_COLOR;
-	}
-
   @include respond($BREAKPOINT_XL) {
 	margin-top:$CONTENT_PADDING;
   }

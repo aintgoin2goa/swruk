@@ -1,0 +1,38 @@
+{{> top }}
+<div id="canvas" class="blog">
+
+	<div class="grid-container">
+		<h1>Blog</h1>
+		<div class="column-2-3 blog-list">
+
+			{{#each blogs}}
+				{{> blog-summary }}
+			{{/each}}
+
+		</div>
+		<div class="column-1-3">
+            <h2 class="banner-heading">
+                Categories
+            </h2>
+            <ul class="archive">
+                <li><a href="#">Refugees</a></li>
+                <li><a href="#">Charity</a></li>
+                <li><a href="#">Other</a></li>
+            </ul>
+			<h2 class="banner-heading">
+				Archive
+			</h2>
+			<ul class="archive">
+				<li><a href="#">March 16</a></li>
+				<li><a href="#">Feb 16</a></li>
+				<li><a href="#">Jan 16</a></li>
+				<li><a href="#">2015</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	{{> footer }}
+</div>
+{{> bottom }}

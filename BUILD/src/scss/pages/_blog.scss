@@ -1,0 +1,33 @@
+.blog {
+
+  h1 {
+	padding:0 $CONTENT_PADDING;
+	margin:0;
+	background-color: $RED;
+	color:white;
+  }
+
+
+  .blog-summary {
+	padding:0 $CONTENT_PADDING;
+	border-bottom:1px solid $DIVIDER_COLOR;
+
+	&:last-child {
+	  border-bottom: 0;
+	}
+
+	h3 {
+	  margin-bottom:0;
+
+	  a {
+		color:inherit;
+		text-decoration: none;
+	  }
+	}
+
+	h4 {
+	  text-transform: none;
+	}
+  }
+
+}

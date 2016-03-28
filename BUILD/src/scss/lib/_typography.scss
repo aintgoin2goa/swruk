@@ -1,10 +1,10 @@
 @include font-face("shenzhenindustrial", "fonts/shenzhenindustrial/shenzhenindustrial", bold, normal);
-@include font-face("Roboto-Regular", "fonts/roboto/Roboto-Regular");
 @include font-face("Cabin", "fonts/cabin/Cabin-Regular");
+@include font-face('Cooper-Hewitt-Thin', "fonts/cooperhewitt/cooperhewitt-thin-webfont");
 
 $TITLE_FONT_FAMILY: "shenzhenindustrial", arial, sans-serif;
-//$BODY_COPY_FONT_FAMILY: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $BODY_COPY_FONT_FAMILY: "Cabin", Helvetica, Arial, sans-serif;
+$THIN_FONT_FAMILY: "Cooper-Hewitt-Thin", Helvetiva, Arial, sans-serif;
 
 body{
   font-family: $BODY_COPY_FONT_FAMILY;
@@ -36,10 +36,26 @@ h3{
 
 h4{
   text-transform: uppercase;
-  font-family: $BODY_COPY_FONT_FAMILY;
-  font-size: 1.2em;
+  font-family: $THIN_FONT_FAMILY;
+  font-size: 0.9em;
+  margin:0;
 }
 
 a{
   color:$DEFAULT_LINK_COLOR;
+}
+
+.thin{
+  font-family: $THIN_FONT_FAMILY;
+}
+
+.banner-heading {
+  font-size:1.2em;
+  color:$HOME_HEADER_COLOR;
+  background-color: $HOME_HEADER_BG;
+  padding:0.25em 0.5em;
+
+  .icon {
+	fill: $HOME_HEADER_COLOR;
+  }
 }

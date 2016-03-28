@@ -13,7 +13,9 @@ const colors = require('colors');
 const srcDir = path.resolve(__dirname, '../src/html/');
 const destDir = path.resolve(__dirname, '../static/html/');
 const output = new Map();
-const data = {};
+const data = {
+	blogs: [{}, {}, {}]
+};
 
 co(function* (){
 	yield mkdir(destDir);

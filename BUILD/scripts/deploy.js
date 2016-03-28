@@ -5,26 +5,22 @@ var fs = require('fs');
 var path = require('path');
 var colors = require('colors');
 var mime = require('mime');
+var glob = require('glob-fs')({gitignore:true});
 
 var REGION = 'eu-west-1';
 
 var s3 = new AWS.S3({params: {Bucket: 'static.swruk.org'}, region:REGION});
 var dist = path.resolve(__dirname, '../static/');
 
-
-var foldersToUpload = [
-	dist,
-	path.resolve(dist, 'fonts/shenzhenindustrial/'),
-	path.resolve(dist, 'img/'),
-	path.resolve(dist, 'html/')
-];
+function isNotDirectory(file){
+	return !fs.statSync(file).isDirectory();
+}
 
 function getContentType(filename){
 	return mime.lookup(filename);
 }
 
 function uploadFile(file){
-	console.log('createreadystream', file);
 	var stream = fs.createReadStream(file);
 	var key = file.replace(process.cwd()+'/static/', '');
 
@@ -48,24 +44,22 @@ function uploadFile(file){
 
 
 function getFilesToUpload(){
-	var files  = [];
-	foldersToUpload.forEach(function(folder){
-		fs.readdirSync(folder).forEach(function(file){
-			if(file.indexOf('.') > 0){
-				files.push(path.resolve(folder, file));
-			}
-		});
-	});
-
-	return files;
+	let files = 'static/**/**';
+	return glob.readdirSync(files)
+		.map(f => path.resolve(f))
+		.filter(isNotDirectory);
 }
 
 Promise.all(getFilesToUpload().map(uploadFile))
 	.then(function(){
 		console.log(colors.green('All files uploaded'));
+		process.exit(0);
 	})
 	.catch(function(err){
-		console.error(colors.red(err));
+		console.log(colors.red('ERROR'));
+		console.error(colors.red(err.toString()));
+		console.error(colors.red(err.stack));
+		process.exit(1);
 	});
 
 
