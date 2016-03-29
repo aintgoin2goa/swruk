@@ -2,10 +2,15 @@ footer {
   box-sizing: content-box;
   background-color:black;
   color:white;
+  height:$FOOTER_HEIGHT;
 
   p {
 	padding: $CONTENT_PADDING;
 	margin:0;
 	font-size:0.8em;
+  }
+
+  .fixed-footer & {
+	@include position(fixed, null 0 0 0);
   }
 }

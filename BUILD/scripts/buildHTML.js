@@ -14,7 +14,11 @@ const srcDir = path.resolve(__dirname, '../src/html/');
 const destDir = path.resolve(__dirname, '../static/html/');
 const output = new Map();
 const data = {
-	blogs: [{}, {}, {}]
+	blogs: [
+		{},
+		{},
+		{}
+	]
 };
 
 co(function* (){

@@ -43,6 +43,17 @@ h4{
 
 a{
   color:$DEFAULT_LINK_COLOR;
+  display: inline-block;
+  padding:1px;
+}
+
+a:hover {
+  background-color: $DEFAULT_LINK_COLOR;
+  color: $DEFAULT_LINK_HOVER_COLOR;
+
+  h1 & {
+	background-color: inherit;
+  }
 }
 
 .thin{
@@ -58,4 +69,11 @@ a{
   .icon {
 	fill: $HOME_HEADER_COLOR;
   }
+}
+
+.page-header {
+  padding:10px $CONTENT_PADDING 5px $CONTENT_PADDING;
+  margin:0;
+  background-color: $PAGE_HEADER_BG;
+  color:$PAGE_HEADER_COLOR;
 }

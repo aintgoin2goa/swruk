@@ -68,11 +68,7 @@ header.fixed {
 	display:none;
   }
 
-  a{
-
-  }
-
-  [data-state="open"]{
+  &[data-state="open"]{
 	.menu-icon {
 	  display:none;
 	}

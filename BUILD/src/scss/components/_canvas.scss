@@ -43,4 +43,9 @@
 
 	}
   }
+
+  &.fixed-footer {
+	@include position(absolute, 0 0 0 0);
+	padding-bottom:$FOOTER_HEIGHT;
+  }
 }

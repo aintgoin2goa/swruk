@@ -2,7 +2,8 @@
 
 
 const components = [
-	require('./menu')
+	require('./menu'),
+	require('./footer')
 ];
 
 function init(){

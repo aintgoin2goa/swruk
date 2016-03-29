@@ -2,7 +2,7 @@
 <div id="canvas" class="blog">
 
 	<div class="grid-container">
-		<h1>Blog</h1>
+		<h1 class="page-header">Blog</h1>
 		<div class="column-2-3 blog-list">
 
 			{{#each blogs}}
@@ -10,16 +10,22 @@
 			{{/each}}
 
 		</div>
-		<div class="column-1-3">
+		<div class="column-1-3 blog-sidebar">
             <h2 class="banner-heading">
-                Categories
+                <svg class="icon categories-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M7 2l2 2h7v11h-16v-13z"></path>
+                </svg>                Categories
             </h2>
-            <ul class="archive">
+            <ul class="categories">
                 <li><a href="#">Refugees</a></li>
                 <li><a href="#">Charity</a></li>
                 <li><a href="#">Other</a></li>
             </ul>
 			<h2 class="banner-heading">
+                <svg class="icon archive-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="16" viewBox="0 0 17 16">
+                    <path d="M16 15v-1h-1v-6h1v-1h-3v1h1v6h-3v-6h1v-1h-3v1h1v6h-3v-6h1v-1h-3v1h1v6h-3v-6h1v-1h-3v1h1v6h-1v1h-1v1h17v-1h-1z"></path>
+                    <path d="M8 0h1l8 5v1h-17v-1l8-5z"></path>
+                </svg>
 				Archive
 			</h2>
 			<ul class="archive">
