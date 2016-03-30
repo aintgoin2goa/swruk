@@ -3,7 +3,7 @@ build-static: clean-static
 	node scripts/buildHTML.js
 	cp -r src/img/ static/img/
 	cp -r src/fonts/ static/fonts/
-	cp src/js/html5shiv.min.js static/
+	cp -r src/js/lib/ static/lib/
 	node-sass src/scss/main.scss static/styles.css
 	node-sass src/scss/ie8.scss static/oldie.css
 	webpack
@@ -11,6 +11,7 @@ build-static: clean-static
 clean-static:
 	rm -rf static/
 	mkdir static
+	mkdir static/lib
 
 deploy-local:
 	cp -r dist/ /Applications/MAMP/htdocs/swruk/

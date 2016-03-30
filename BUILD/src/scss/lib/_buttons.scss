@@ -24,23 +24,7 @@ button {
   }
 }
 
-header button {
-
-  a{
-	background-color: black;
-	color:$MENU_BUTTON_COLOR;
-  }
-
-
-  a:hover,
-  a:focus,
-  &.active a {
-	background-color: $BUTTON_HIGHLIGHT_COLOR;
-  }
-}
-
-
-a.button {
+.button {
   text-decoration: none;
   background-color:white;
   padding:0.25em 0.5em;
@@ -58,4 +42,20 @@ a.button {
 	color:$DEFAULT_LINK_HOVER_COLOR;
   }
 }
+
+header .button {
+
+	background-color: $MENU_BUTTON_BG;
+	color:$MENU_BUTTON_COLOR;
+
+
+  &:hover,
+  &:focus,
+  &.active {
+	background-color: $BUTTON_HIGHLIGHT_COLOR;
+  }
+}
+
+
+
 

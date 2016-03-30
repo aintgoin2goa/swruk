@@ -6,7 +6,7 @@ nav{
   text-align:right;
   background-color: $NAV_BG;
 
-  @include respond($BREAKPOINT_L) {
+  @include respond($NAV_SNAP_POINT) {
 	position:absolute;
 	top:50px;
   }
@@ -14,28 +14,29 @@ nav{
 
   .js & {
 	position: fixed;
+	display:none;
 	width:50%;
 	top:$HEADER_HEIGHT_XS;
 	right:0;
 	bottom:0;
-	z-index: 1;
+	z-index: 10;
 	background-color: rgba(0,0,0,0.7);
-	@include transform(translate3d(100%,0,0));
 	@include transition(all $DEFAULT_ANIMATION_LENGTH ease-out);
 
 	@include respond($BREAKPOINT_M){
 	  width:30%;
 	}
 
-	@include respond($BREAKPOINT_L) {
+	@include respond($NAV_SNAP_POINT) {
 	  height:$NAV_STRIP_HEIGHT;
 	  position: fixed;
+	  display:block;
 	  width:100%;
 	  top:$NAV_STRIP_TOP_L;
 	  left:0;
 	  bottom:auto;
 	  z-index: 5;
-	  @include transform(translate3d(0,0,0));
+
 	}
 
 	@include respond($BREAKPOINT_XL) {
@@ -47,10 +48,6 @@ nav{
 	h4{
 	  display:none;
 	}
-  }
-
-  .js &.open {
-	@include transform(translate3d(0,0,0));
   }
 
   h4{
@@ -71,7 +68,7 @@ nav{
 	margin:0;
 	border-bottom:1px solid $HEADER_BG;
 
-	@include respond($BREAKPOINT_L) {
+	@include respond($NAV_SNAP_POINT) {
 	  display: inline-block;
 	  border:0;
 	}
@@ -91,3 +88,23 @@ nav{
 	color:$NAV_HIGHLIGHT_TEXT_COLOR;
   }
 }
+
+.js.csstransforms3d nav {
+  display: block;
+  z-index:1;
+  @include transform(translate3d(100%,0,0));
+
+  @include respond($NAV_SNAP_POINT){
+	@include transform(translate3d(0,0,0));
+	z-index: 3;
+  }
+}
+
+.js nav.open {
+  display: block;
+}
+
+.js.csstransforms3d nav.open {
+  @include transform(translate3d(0,0,0));
+}
+

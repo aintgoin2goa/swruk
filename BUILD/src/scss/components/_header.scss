@@ -18,7 +18,7 @@ header{
 	padding-top:3px;
 	height:$HEADER_HEIGHT_XS;
 
-	@include respond($BREAKPOINT_L) {
+	@include respond($NAV_SNAP_POINT) {
 	  font-size:50px;
 	  height: $HEADER_HEIGHT_L;
 	}
@@ -50,7 +50,12 @@ header.fixed {
   text-transform: uppercase;
   font-size:1.2em;
 
-  @include respond($BREAKPOINT_L) {
+  &:after {
+	content:'';
+	display:none;
+  }
+
+  @include respond($NAV_SNAP_POINT) {
 	display: none;
   }
 

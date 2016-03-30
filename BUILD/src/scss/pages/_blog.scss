@@ -1,8 +1,5 @@
 .blog {
 
-
-
-
   .blog-summary {
 	padding:0 $CONTENT_PADDING;
 	border-bottom:1px solid $DIVIDER_COLOR;
@@ -30,6 +27,12 @@
   }
 
   .blog-sidebar {
+	padding-top: $BLOG_SIDEBAR_TOP_GAP;
+
+	h2{
+	  margin-top:0;
+	}
+
 	ul {
 	  list-style-type: none;
 	  padding:0;
@@ -47,5 +50,24 @@
 	.icon-archive {
 	  margin-right:1px;
 	}
+
+	.categories {
+	  margin-bottom: $CONTENT_PADDING;
+	}
+  }
+
+  .blog-detail {
+	padding:0 $CONTENT_PADDING;
+
+	img {
+	  display:block;
+	  width:100%;
+	  box-shadow:0px 0px 2px 5px $WHITE_TRANSPARENT;
+	}
+
+	h1 {
+	  margin-top:$CONTENT_PADDING;
+	}
+
   }
 }
