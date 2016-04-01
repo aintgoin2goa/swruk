@@ -1,6 +1,10 @@
 .grid-container {
   @include outer-container(100%);
   overflow: hidden;
+
+  @include respond($BREAKPOINT_M){
+	padding: $CONTENT_PADDING;
+  }
 }
 
 .column{

@@ -64,7 +64,7 @@ a:hover {
   font-size:1.2em;
   color:$HOME_HEADER_COLOR;
   background-color: $HOME_HEADER_BG;
-  padding:0.25em 0.5em;
+  padding:0.25em $CONTENT_PADDING;
 
   .icon {
 	fill: $HOME_HEADER_COLOR;
