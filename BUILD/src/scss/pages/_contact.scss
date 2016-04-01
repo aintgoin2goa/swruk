@@ -1,0 +1,66 @@
+.contact {
+
+  .contact-content {
+	padding:0 $CONTENT_PADDING;
+  }
+
+
+
+  .social-links {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	font-family: $TITLE_FONT_FAMILY;
+
+	li {
+	  margin-bottom:1em;
+	  display: inline-block;
+	}
+
+	li:first-child {
+	  margin-right:20px;
+	}
+  }
+
+  .mailing-list {
+	@include omega;
+  }
+
+  form {
+
+	.errors-list {
+	  padding:10px;
+	  background-color: $RED;
+	  color:white;
+	  margin-bottom: $CONTENT_PADDING;
+	}
+
+	margin-bottom: 50px;
+
+	fieldset {
+	  margin:0;
+	  padding:0;
+	  border:0;
+	}
+
+	legend {
+	  @include visuallyHidden;
+	}
+
+	label {
+	  @include visuallyHidden;
+	}
+
+	input, textarea {
+	  @include formElement;
+	}
+
+	textarea {
+	  height:150px;
+	}
+
+	button {
+	  font-size:1em;
+	}
+  }
+}

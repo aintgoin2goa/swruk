@@ -8,6 +8,7 @@
 @import "lib/typography";
 @import "lib/buttons";
 @import "lib/layout";
+@import "lib/form";
 
 $DEFAULT_ANIMATION_LENGTH: 250ms;
 
@@ -37,3 +38,4 @@ body, html{
 
 @import "pages/homepage";
 @import "pages/blog";
+@import "pages/contact";
