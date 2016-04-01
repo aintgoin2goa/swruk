@@ -4,6 +4,10 @@
   left: -9999px !important;
 }
 
+@mixin undoVisuallyHidden {
+  position: static !important;
+}
+
 @mixin respond($breakpoint) {
   @if($MQ_SUPPORTED){
 	@include media($breakpoint){

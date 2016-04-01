@@ -11,8 +11,6 @@
 
 .input {
   width:100%;
-  margin-left:-$CONTENT_PADDING;
-  padding-left:$CONTENT_PADDING;
   border-radius:3px;
   margin-bottom: $CONTENT_PADDING;
 
@@ -24,7 +22,7 @@
 .input.error {
   background-color: $RED;
   padding:$CONTENT_PADDING/2;
-  padding-left:$CONTENT_PADDING;
+  margin-bottom: $CONTENT_PADDING/2;
 
   input, textarea {
 	box-shadow:0px 0px 3px 1px $RED_TRANSPARENT;

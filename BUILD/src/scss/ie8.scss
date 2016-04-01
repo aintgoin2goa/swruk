@@ -41,4 +41,26 @@ $MQ_SUPPORTED: false;
 	.blog-detail {
 	  padding-left:$CONTENT_PADDING;
 	}
+
+  .button {
+	background-color: $RED;
+	color:white;
+	border: 1px solid $RED;
+
+	&:hover, &:focus {
+	  background-color: white;
+	  color:$RED;
+	}
+  }
+
+  form {
+	input, textarea {
+	  border:1px solid black;
+	}
+
+	label {
+	  @include undoVisuallyHidden;
+
+	}
+  }
 }
