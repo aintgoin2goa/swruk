@@ -1,0 +1,23 @@
+.free-text-content {
+  & > *:first-child {
+	margin-top:0;
+  }
+
+  & > *:last-child {
+	margin-bottom:0;
+  }
+
+  dl, dt, dd {
+	margin:0;
+  }
+
+
+  dl {
+	@include span-columns(6 of 6);
+
+	dt, dd {
+	  @include span-columns(3 of 6);
+	  margin-bottom:0.5em;
+	}
+  }
+}

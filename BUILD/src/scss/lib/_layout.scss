@@ -5,6 +5,10 @@
   @include respond($BREAKPOINT_M){
 	padding: $CONTENT_PADDING;
   }
+
+  .free-text-content {
+	padding: $CONTENT_PADDING;
+  }
 }
 
 .column{
@@ -66,4 +70,5 @@
 	@include span-columns(8);
   }
 }
+
 
