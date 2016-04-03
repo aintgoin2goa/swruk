@@ -4,9 +4,18 @@ build-static: clean-static
 	cp -r src/img/ static/img/
 	cp -r src/fonts/ static/fonts/
 	cp -r src/js/lib/ static/lib/
-	node-sass src/scss/main.scss static/styles.css
-	node-sass src/scss/ie8.scss static/oldie.css
+	node-sass src/scss/main.scss static/styles.css  --source-map-embed
+	node-sass src/scss/ie8.scss static/oldie.css  --source-map-embed
 	webpack
+
+build-static-prod: clean-static
+	node scripts/buildHTML.js
+	cp -r src/img/ static/img/
+	cp -r src/fonts/ static/fonts/
+	cp -r src/js/lib/ static/lib/
+	node-sass src/scss/main.scss static/styles.css --output-style compressed
+	node-sass src/scss/ie8.scss static/oldie.css --output-style compressed
+	webpack --optimize-minimize
 
 clean-static:
 	rm -rf static/
@@ -25,7 +34,7 @@ run: deploy-local
 run-static: deploy-local-static
 	open -a "/Applications/Google Chrome.app" 'http://swruk.local/swruk-html/html'
 
-deploy-static:
+deploy-static: build-static-prod
 	node scripts/deploy.js
 
 deploy:
