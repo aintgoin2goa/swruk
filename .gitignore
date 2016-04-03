@@ -1,2 +1,3 @@
 BUILD/static/
 BUILD/node_modules/
+.DS_Store

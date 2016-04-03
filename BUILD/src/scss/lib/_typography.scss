@@ -72,7 +72,7 @@ a:hover {
 }
 
 .page-header {
-  padding:10px $CONTENT_PADDING 5px $CONTENT_PADDING;
+  padding:10px $CONTENT_PADDING*2 5px $CONTENT_PADDING*2;
   margin:0;
   background-color: $PAGE_HEADER_BG;
   color:$PAGE_HEADER_COLOR;

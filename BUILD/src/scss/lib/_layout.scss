@@ -71,4 +71,18 @@
   }
 }
 
+.free-text-content.column-1-2 {
+	@include span-columns(12);
 
+	@include respond($BREAKPOINT_M){
+		@include span-columns(12);
+	}
+
+	@include respond($BREAKPOINT_L){
+		@include span-columns(9);
+	}
+
+	@include respond($BREAKPOINT_XL){
+		@include span-columns(6);
+	}
+}
