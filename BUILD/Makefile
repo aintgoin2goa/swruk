@@ -35,16 +35,8 @@ run-static: deploy-local-static
 	open -a "/Applications/Google Chrome.app" 'http://swruk.local/swruk-html/html'
 
 deploy-static: build-static-prod
-	node scripts/deploy.js
+	node scripts/deployStatic.js
 
-deploy:
-	# deploy to AWS here
+deploy-wordpress:
+	node scripts/deployWordpress.js
 
-
-
-watch: run-static
-	watchman watch ./src
-	watchman -j ["trigger", "./src", {"name": "everything", "command": ["make deploy-local-static"]}]
-
-end-watch:
-	watchman watch-del-all
