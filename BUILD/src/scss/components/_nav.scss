@@ -36,12 +36,14 @@ nav{
 	  left:0;
 	  bottom:auto;
 	  z-index: 5;
+		text-align: left;
+		@include transition(none);
 
 	}
 
 	@include respond($BREAKPOINT_XL) {
 	  top:$NAV_STRIP_TOP_XL;
-	  text-align: left;
+
 	}
 
 

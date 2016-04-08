@@ -29,7 +29,7 @@ function remove_editor_init() {
 
 
        // Example of removing page editor for page-your-template.php template.
-       if (  'about.php' === $template_file ) {
+       if (  'about.php' === $template_file || 'contact.php' === $template_file ) {
            remove_post_type_support( 'page', 'editor' );
            // Other features can also be removed in addition to the editor. See: https://codex.wordpress.org/Function_Reference/remove_post_type_support.
        }

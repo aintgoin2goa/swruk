@@ -3,7 +3,8 @@
 <?php get_template_part('template-parts/top'); ?>
 
 <div id="canvas" class="contact">
-	<h1 class="page-header">Contact</h1>
+	<?php the_post(); ?>
+	<h1 class="page-header"><?php the_title(); ?></h1>
 	<div class="grid-container">
 
 		<div class="column-1-2 social-media">
@@ -12,10 +13,10 @@
 					<path d="M12 12.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"></path>
 					<path d="M5.112 12.427c0.864-0.565 1.939-0.994 3.122-1.256-0.235-0.278-0.449-0.588-0.633-0.922-0.475-0.863-0.726-1.813-0.726-2.748 0-1.344 0-2.614 0.478-3.653 0.464-1.008 1.299-1.633 2.488-1.867-0.264-1.195-0.968-1.98-2.841-1.98-3 0-3 2.015-3 4.5 0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h4.359c0.227-0.202 0.478-0.393 0.753-0.573z"></path>
 				</svg>
-				Social Media
+				<?php the_field('social_media_header'); ?>
 			</h2>
 			<div class="contact-content">
-				<p>Feel free to send us a message on facebook or twitter</p>
+				<p><?php the_field('social_media_text'); ?></p>
 				<ul class="social-links">
 					<li><a class="button" href="https://www.facebook.com/Solidaritywithrefugees">
 						<svg class="icon facebook-icon"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
@@ -37,11 +38,11 @@
 				<svg class="icon mailing-list-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
 					<path d="M14.5 2h-13c-0.825 0-1.5 0.675-1.5 1.5v10c0 0.825 0.675 1.5 1.5 1.5h13c0.825 0 1.5-0.675 1.5-1.5v-10c0-0.825-0.675-1.5-1.5-1.5zM6.23 8.6l-4.23 3.295v-7.838l4.23 4.543zM2.756 4h10.488l-5.244 3.938-5.244-3.938zM6.395 8.777l1.605 1.723 1.605-1.723 3.29 4.223h-9.79l3.29-4.223zM9.77 8.6l4.23-4.543v7.838l-4.23-3.295z"></path>
 				</svg>
-				Mailing list
+				<?php the_field('mailing_list_header'); ?>
 			</h2>
 			<div class="contact-content">
 				<p>
-					Sign up to our mailing list to be kept up-to-date with our activities
+					<?php the_field('mailing_list_text'); ?>
 				</p>
 				<p>
 					<a class="button" target="_blank" href="http://eepurl.com/by0-eP">
@@ -58,10 +59,10 @@
 				<svg class="icon question-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
 					<path d="M7 11h2v2h-2zM11 4c0.552 0 1 0.448 1 1v3l-3 2h-2v-1l3-2v-1h-5v-2h6zM8 1.5c-1.736 0-3.369 0.676-4.596 1.904s-1.904 2.86-1.904 4.596c0 1.736 0.676 3.369 1.904 4.596s2.86 1.904 4.596 1.904c1.736 0 3.369-0.676 4.596-1.904s1.904-2.86 1.904-4.596c0-1.736-0.676-3.369-1.904-4.596s-2.86-1.904-4.596-1.904zM8 0v0c4.418 0 8 3.582 8 8s-3.582 8-8 8c-4.418 0-8-3.582-8-8s3.582-8 8-8z"></path>
 				</svg>
-				Enquiries
+				<?php the_field('enquiries_header'); ?>
 			</h2>
 			<div class="contact-content">
-				<p>Please use the form below to get in contact.  We will endevour to get back to you as soon as possible</p>
+				<p><?php the_field('enquiries_text'); ?></p>
 				<div class="form-container column-1-2">
 					<form class="contact-form" method="post">
 						<fieldset>
