@@ -56,6 +56,18 @@ a:hover {
   }
 }
 
+p{
+	line-height: 1.25em;
+}
+
+li {
+	margin-top:0.5em;
+}
+
+li:first-child {
+	margin-top:0;
+}
+
 .thin{
   font-family: $THIN_FONT_FAMILY;
 }

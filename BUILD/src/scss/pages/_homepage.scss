@@ -35,33 +35,14 @@
 	font-size: 1.2em;
   }
 
-  figure {
-	width:90%;
-	margin:0 auto;
-	padding:5px;
-
 	img {
 	  width:100%;
 	  box-shadow: 0px 0px 3px 2px white;
 	}
-  }
 
-  @include respond($BREAKPOINT_M){
+  @include respond($BREAKPOINT_L){
 	@include span-columns(12);
 	@include omega;
-
-	figure {
-	  width:45%;
-	  margin-top:$CONTENT_PADDING;
-	  margin-right:$CONTENT_PADDING;
-	  float:right;
-	}
-
-	p {
-	  float:left;
-	  clear:left;
-	  width:50%;
-	}
   }
 
   @include respond($BREAKPOINT_XL) {
@@ -74,11 +55,6 @@
 	  clear:right;
 	}
 
-	figure {
-	  float:left;
-	  width:55%;
-	  margin:$CONTENT_PADDING 0 0 $CONTENT_PADDING;
-	}
   }
 
 
@@ -105,16 +81,6 @@
 
   .facebook-container.full {
 	display:none;
-  }
-
-  @include respond($BREAKPOINT_L){
-	.facebook-container.small {
-	  display:none;
-	}
-
-	.facebook-container.full {
-	  display:block;
-	}
   }
 
 }

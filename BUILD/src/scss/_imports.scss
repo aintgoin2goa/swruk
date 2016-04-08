@@ -18,6 +18,14 @@ body, html{
   padding:0;
 }
 
+body.logged-in {
+	margin-top:-46px;
+
+	@include respond($BREAKPOINT_L){
+		margin-top:-32px;
+	}
+}
+
 .mustard body {
   background:url(img/hungary-border.jpg) center center no-repeat;
   background-attachment: fixed;

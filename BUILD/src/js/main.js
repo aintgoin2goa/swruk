@@ -7,7 +7,8 @@ let initRun = false;
 const components = [
 	require('./menu'),
 	require('./footer'),
-	require('./contact')
+	require('./contact'),
+	require('./background')
 ];
 
 function init(){

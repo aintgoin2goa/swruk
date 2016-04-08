@@ -23,7 +23,7 @@ clean-static:
 	mkdir static/lib
 
 deploy-local:
-	cp -r dist/ /Applications/MAMP/htdocs/swruk/
+	cp -r wordpress/ /Applications/MAMP/htdocs/swruk/
 
 deploy-local-static: build-static
 	cp -r static/ /Applications/MAMP/htdocs/swruk-html/

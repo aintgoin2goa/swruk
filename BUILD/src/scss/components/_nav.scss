@@ -83,10 +83,12 @@ nav{
 	padding:0.5em;
   }
 
-  a:hover{
+  a:hover, a:focus, li.current-menu-item a{
 	background-color: $NAV_HIGHLIGHT_COLOR;
 	color:$NAV_HIGHLIGHT_TEXT_COLOR;
   }
+
+
 }
 
 .js.csstransforms3d nav {
