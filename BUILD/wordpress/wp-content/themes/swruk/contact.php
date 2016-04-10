@@ -64,16 +64,24 @@
 			<div class="contact-content">
 				<p><?php the_field('enquiries_text'); ?></p>
 				<div class="form-container column-1-2">
-					<form class="contact-form" method="post">
+					<form novalidate class="contact-form" method="post" action="<?php echo get_template_directory_uri(); ?>/enquiry.php">
 						<fieldset>
 							<legend>Contact Form</legend>
-							<!--<div class="errors-list">-->
-							<!--This block is just for errors returned from server when no js or html5-->
-							<!--<p>This form has the following errors</p>-->
-							<!--<ul>-->
-							<!--<li>Name is required!</li>-->
-							<!--</ul>-->
-							<!--</div>-->
+							<?php
+								if(array_key_exists('errors', $_GET)){
+									$errors = urldecode($_GET['errors']);
+									$errors = explode(',', $errors);
+									echo "<div class=\"errors-list\">\n";
+									echo "\t<p>This form has the following errors</p>";
+									echo "\t<ul>";
+									foreach($errors as $error){
+										echo "\t\t<li>{$error}</li>";
+									}
+									echo "\t</ul>";
+									echo "<div>";
+								}
+							?>
+							<input type="hidden" name="uri" value="<?php echo strtok($_SERVER['REQUEST_URI'], '?'); ?>">
 							<div class="input" data-v-required="Please give your name">
 								<label for="input-name">Name</label>
 								<input placeholder="Name" type="text" id="input-name" name="name" required>
