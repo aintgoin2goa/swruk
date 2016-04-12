@@ -38,5 +38,7 @@ deploy-static: build-static-prod
 	node scripts/deployStatic.js
 
 deploy-wordpress:
-	node scripts/deployWordpress.js
+	rm -f dist.tar.gz
+	tar -zcf dist.tar.gz wordpress
+	eb deploy --staged
 
