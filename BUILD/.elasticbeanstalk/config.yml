@@ -9,4 +9,4 @@ global:
   profile: null
   sc: git
 deploy:
-  artifact dist.tar.gz
+  artifact: swruk.zip
