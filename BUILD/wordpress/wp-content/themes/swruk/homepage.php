@@ -8,11 +8,6 @@
 		<section class="home-section who column">
 			<?php the_post(); ?>
 			<?php the_content(); ?>
-
-			<p>
-				<a class="button read-more-link" href="#">About us</a>
-			</p>
-		</section>
 	</div>
 
 	<div class="column-1-3">
