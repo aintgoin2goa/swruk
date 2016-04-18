@@ -25,7 +25,7 @@
 
 		if('querySelector' in document && 'localStorage' in window && 'addEventListener' in window){
             window.polyfillsLoaded = false;
-			addScript('http://static.swruk.org/bundle.js');
+			addScript('<?php swruk_asset_file('bundle.js'); ?>');
 			addScript('https://cdn.polyfill.io/v2/polyfill.js?features=default&callback=window.onPolyfillsLoaded');
 		}
 	}());

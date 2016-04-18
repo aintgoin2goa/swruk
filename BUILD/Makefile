@@ -34,8 +34,11 @@ run: deploy-local
 run-static: deploy-local-static
 	open -a "/Applications/Google Chrome.app" 'http://swruk.local/swruk-html/html'
 
-deploy-static: build-static-prod
+deploy-static: increment-static-version build-static-prod
 	node scripts/deployStatic.js
+
+increment-static-version:
+	node scripts/incrementStaticVersion.js
 
 deploy-wordpress:
 	zip -r swruk.zip wordpress

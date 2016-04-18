@@ -9,15 +9,15 @@
 <head lang="en">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="http://static.swruk.org/img/favicon.ico" />
-	<script src="http://static.swruk.org/lib/modernizr.js"></script>
+	<link rel="icon" href="<?php swruk_asset_file('img/favicon.ico'); ?>" />
+	<script src="<?php swruk_asset_file('lib/modernizr.js'); ?>"></script>
 
 	<!--[if lt IE 9]>
-	<link rel="stylesheet" href="http://static.swruk.org/oldie.css">
+	<link rel="stylesheet" href="<?php swruk_asset_file('oldie.css'); ?>">
 	<![endif]-->
 
 	<!--[if gt IE 8]><!-->
-	<link rel="stylesheet" type="text/css" href="http://static.swruk.org/styles.css">
+	<link rel="stylesheet" type="text/css" href="<?php swruk_asset_file('styles.css'); ?>">
 	<!--<![endif]-->
 
 	<?php wp_head() ?>

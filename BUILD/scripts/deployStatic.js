@@ -1,16 +1,13 @@
 'use strict';
 require('dotenv').load();
-var AWS = require('aws-sdk');
-var fs = require('fs');
-var path = require('path');
-var colors = require('colors');
-var mime = require('mime');
-var glob = require('glob-fs')({gitignore:true});
-
-var REGION = 'eu-west-1';
-
-var s3 = new AWS.S3({params: {Bucket: 'static.swruk.org'}, region:REGION});
-var dist = path.resolve(__dirname, '../static/');
+const AWS = require('aws-sdk');
+const fs = require('fs');
+const path = require('path');
+const colors = require('colors');
+const mime = require('mime');
+const glob = require('glob-fs')({gitignore:true});
+const REGION = 'eu-west-1';
+const s3 = new AWS.S3({params: {Bucket: 'static.swruk.org'}, region:REGION});
 
 function isNotDirectory(file){
 	return !fs.statSync(file).isDirectory();
@@ -31,7 +28,7 @@ function uploadFile(file){
 			Key : key,
 			Body : stream,
 			ACL : 'public-read',
-			CacheControl : 'public, max-age=3600',
+			CacheControl : 'public, max-age=86400',
 			ContentType : getContentType(key)
 		}, function(err){
 			if(err) return reject(err);
@@ -50,6 +47,7 @@ function getFilesToUpload(){
 		.filter(isNotDirectory);
 }
 
+
 Promise.all(getFilesToUpload().map(uploadFile))
 	.then(function(){
 		console.log(colors.green('All files uploaded'));
@@ -61,6 +59,7 @@ Promise.all(getFilesToUpload().map(uploadFile))
 		console.error(colors.red(err.stack));
 		process.exit(1);
 	});
+
 
 
 

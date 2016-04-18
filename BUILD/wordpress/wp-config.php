@@ -17,7 +17,10 @@
  *
  * @package WordPress
  */
-
+if(getenv('WP_ENV') !== 'production'){
+	define('WP_HOME', 'http://swruk.local/');
+	define('WP_SITEURL', 'http://swruk.local/');
+}
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -94,3 +97,5 @@ define('FS_METHOD', 'direct');
 //
 //define( 'DBI_AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY') );
 //define( 'DBI_AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY') );
+
+

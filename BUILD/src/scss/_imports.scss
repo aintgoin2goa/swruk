@@ -2,6 +2,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "lib/mixins";
+@import "lib/functions";
 
 @import "lib/dimensions";
 @import "lib/palette";
@@ -27,7 +28,7 @@ body.logged-in {
 }
 
 .mustard body {
-  background:url(img/hungary-border.jpg) center center no-repeat;
+  background:url(static_asset("img/hungary-border.jpg")) center center no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }

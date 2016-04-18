@@ -1,4 +1,10 @@
 <?php
+include 'static_asset_version.php';
+
+if(getenv('WP_ENV' !== 'production')){
+	update_option( 'siteurl', 'http://swruk.local' );
+    update_option( 'home', 'http://swruk.local' );
+}
 
 add_action( 'init', 'remove_editor_init' );
 
@@ -36,4 +42,7 @@ function remove_editor_init() {
     }
 }
 
+function swruk_asset_file($file){
+	echo "http://static.swruk.org/{$file}?v=" . STATIC_ASSET_VERSION;
+}
 ?>

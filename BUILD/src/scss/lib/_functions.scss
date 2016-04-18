@@ -1,0 +1,5 @@
+@import "../static_asset_version";
+
+@function static_asset($file){
+	@return "http://static.swruk.org/#{$file}?v=#{$static-asset-version}";
+}
