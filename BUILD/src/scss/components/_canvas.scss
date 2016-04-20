@@ -23,15 +23,10 @@
 	right:0;
 	bottom:0;
 	background:white;
-	  opacity:1;
-	  @include transition(all 1000ms linear);
+	  opacity:0.7;
 	@include filter(blur(20px));
 	z-index:-1;
   }
-
-	.bg-image-loaded &:after {
-		opacity:0.7;
-	}
 
 
 
