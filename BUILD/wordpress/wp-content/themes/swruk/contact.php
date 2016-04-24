@@ -68,7 +68,7 @@
 				<p><?php the_field('enquiries_text'); ?></p>
 				<div class="form-container column-1-2">
 
-						<form novalidate class="contact-form" method="post" action="/wp-content/themes/swruk/enquiry.php">
+						<form novalidate class="contact-form" method="post" action="<?php swruk_action_url('enquiry'); ?>">
 							<fieldset>
 								<legend>Contact Form</legend>
 								<?php

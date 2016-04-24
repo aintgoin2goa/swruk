@@ -1,0 +1,35 @@
+.email-tweet-form {
+	margin-top:$CONTENT_PADDING;
+	width:100%;
+	overflow: hidden;
+	display:none;
+
+	button.tweet-button {
+		float:right;
+		margin: 0 3px 3px 0;
+	}
+
+	button.email-button {
+		float:left;
+		margin: 0 0 3px 3px;
+	}
+}
+
+.text-after-form {
+	clear: both;
+}
+
+.js {
+	.email-tweet-form {
+		display: block;
+	}
+
+	.email-mp-form {
+		display: none;
+	}
+
+	.tweet-mp-form {
+		display: none;
+	}
+}
+

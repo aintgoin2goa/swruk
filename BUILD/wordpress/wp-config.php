@@ -17,10 +17,11 @@
  *
  * @package WordPress
  */
-if(getenv('WP_ENV') !== 'production'){
-	define('WP_HOME', 'http://swruk.local/');
-	define('WP_SITEURL', 'http://swruk.local/');
-}
+
+
+
+	define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+	define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */

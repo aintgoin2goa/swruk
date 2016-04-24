@@ -26,41 +26,5 @@
 	@include omega;
   }
 
-  form {
 
-	.errors-list {
-	  padding:10px;
-	  background-color: $RED;
-	  color:white;
-	  margin-bottom: $CONTENT_PADDING;
-	}
-
-	margin-bottom: 50px;
-
-	fieldset {
-	  margin:0;
-	  padding:0;
-	  border:0;
-	}
-
-	legend {
-	  @include visuallyHidden;
-	}
-
-	label {
-	  @include visuallyHidden;
-	}
-
-	input, textarea {
-	  @include formElement;
-	}
-
-	textarea {
-	  height:150px;
-	}
-
-	button {
-	  font-size:1em;
-	}
-  }
 }

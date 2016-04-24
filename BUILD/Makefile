@@ -22,18 +22,6 @@ clean-static:
 	mkdir static
 	mkdir static/lib
 
-deploy-local:
-	cp -r wordpress/ /Applications/MAMP/htdocs/swruk/
-
-deploy-local-static: build-static
-	cp -r static/ /Applications/MAMP/htdocs/swruk-html/
-
-run: deploy-local
-	open -a "/Applications/Google Chrome.app" 'http://swruk.local/swruk/'
-
-run-static: deploy-local-static
-	open -a "/Applications/Google Chrome.app" 'http://swruk.local/swruk-html/html'
-
 deploy-static: increment-static-version build-static-prod
 	node scripts/deployStatic.js
 
