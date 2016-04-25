@@ -1,5 +1,5 @@
 <?php
-require "../../../wp-load.php";
+require "../../../../wp-load.php";
 
 if(!array_key_exists('uri', $_POST)){
 	exit();
