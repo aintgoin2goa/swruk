@@ -1,0 +1,55 @@
+.event {
+
+	.details {
+		overflow: hidden;
+		float: none;
+		width: 100%;
+
+		dt {
+			float: left;
+			clear: left;
+			margin-right: 10px;
+			font-family: $TITLE_FONT_FAMILY;
+			font-size: 1.2em;
+			width:75px;
+
+			@include respond($BREAKPOINT_L) {
+				clear: none;
+			}
+		}
+
+		dd {
+			float: left;
+			width:230px;
+			position: relative;
+			top: 3px;
+		}
+	}
+
+	img {
+		width:100%;
+		box-shadow: 0px 0px 3px 2px #ffffff;
+		margin: 0 auto;
+	}
+
+	.default-image {
+		@include respond($BREAKPOINT_L) {
+			display: none;
+		}
+	}
+
+	.image-L {
+		width:50%;
+		float:left;
+		margin-right:$CONTENT_PADDING;
+		display:none;
+
+		@include respond($BREAKPOINT_L) {
+			display: block;
+		}
+	}
+
+	.facebook-button {
+		clear: left;
+	}
+}
