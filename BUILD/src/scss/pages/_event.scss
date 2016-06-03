@@ -1,5 +1,9 @@
 .event {
 
+	.event-content {
+		width:100%;
+	}
+
 	.details {
 		overflow: hidden;
 		float: none;
@@ -20,7 +24,7 @@
 
 		dd {
 			float: left;
-			width:230px;
+			width:200px;
 			position: relative;
 			top: 3px;
 		}
@@ -33,23 +37,31 @@
 	}
 
 	.default-image {
-		@include respond($BREAKPOINT_L) {
+		@include respond($BREAKPOINT_M) {
 			display: none;
 		}
 	}
 
 	.image-L {
 		width:50%;
-		float:left;
-		margin-right:$CONTENT_PADDING;
+		float:right;
+		margin-left:$CONTENT_PADDING;
 		display:none;
 
-		@include respond($BREAKPOINT_L) {
+		@include respond($BREAKPOINT_M) {
 			display: block;
+		}
+
+		@include respond($BREAKPOINT_XL) {
+			margin-top: -100px;
 		}
 	}
 
 	.facebook-button {
 		clear: left;
+	}
+
+	h2:first-child {
+		margin-top:0;
 	}
 }
