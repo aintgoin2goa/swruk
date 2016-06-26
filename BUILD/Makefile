@@ -1,12 +1,17 @@
+build-css:
+	node-sass src/scss/main.scss static/styles.css  --source-map-embed
+	node-sass src/scss/ie8.scss static/oldie.css  --source-map-embed
 
-build-static: clean-static
+build-js:
+	webpack
+
+build-static: clean-static build-css build-js
 	node scripts/buildHTML.js
 	cp -r src/img/ static/img/
 	cp -r src/fonts/ static/fonts/
 	cp -r src/js/lib/ static/lib/
-	node-sass src/scss/main.scss static/styles.css  --source-map-embed
-	node-sass src/scss/ie8.scss static/oldie.css  --source-map-embed
-	webpack
+
+
 
 build-static-prod: clean-static
 	node scripts/buildHTML.js
