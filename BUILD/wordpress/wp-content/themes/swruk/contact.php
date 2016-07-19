@@ -69,7 +69,7 @@
 				<div class="form-container column-1-2">
 
 						<form novalidate class="contact-form" method="post" action="<?php swruk_action_url('enquiry'); ?>">
-							<fieldset>
+							<fieldset class="hidden">
 								<legend>Contact Form</legend>
 								<?php
 									if(array_key_exists('errors', $_GET)){

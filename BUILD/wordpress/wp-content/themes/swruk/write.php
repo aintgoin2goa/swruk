@@ -49,7 +49,7 @@
 				</form>
 
 				<form novalidate class="tweet-mp-form" method="post" action="http://tweetyourmp.com/mplookup_twitter.php">
-					<fieldset>
+					<fieldset class="hidden">
 						<legend>Tweet Your MP</legend>
 						<input type="hidden" name="a" value="westminstermp">
 						<div class="input" data-v-required="Please give your postcode">

@@ -6,11 +6,19 @@
 		}
 	}
 
-	.image, .details {
+	.image {
 		@include span-columns(12);
 
 		@include respond($BREAKPOINT_L){
-			@include span-columns(5.5);
+			@include span-columns(6);
+		}
+	}
+
+	.details {
+		@include span-columns(12);
+
+		@include respond($BREAKPOINT_L){
+			@include span-columns(5);
 		}
 	}
 

@@ -59,17 +59,29 @@ form {
 	margin-bottom: 50px;
 
 	fieldset {
+		margin: 0 0 1em 0;
+	}
+
+	fieldset.hidden {
 		margin:0;
 		padding:0;
 		border:0;
+
+		& > legend {
+			@include visuallyHidden;
+		}
+
 	}
 
-	legend {
-		@include visuallyHidden;
-	}
 
 	label {
 		@include visuallyHidden;
+	}
+
+	label.visible {
+		position: static !important;
+		margin-bottom: 0.3em;
+		display: block;
 	}
 
 	input, textarea {
@@ -83,4 +95,5 @@ form {
 	button {
 		font-size:1em;
 	}
+
 }
