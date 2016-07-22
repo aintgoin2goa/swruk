@@ -1,0 +1,51 @@
+ul[role="tablist"]{
+	$tab-border: 1px solid black;
+
+	margin:$STANDARD_GUTTER 0 0 0;
+	padding:0;
+	display: none;
+	border-bottom:1px solid black;
+	width: 100%;
+	overflow: hidden;
+
+	&.visible {
+		display: block;
+	}
+
+	li {
+		float: left;
+		margin: 0;
+		padding:0;
+		list-style-type: none;
+	}
+
+	a[role="tab"]{
+		display: block;
+		padding: 10px;
+		font-family: $TITLE_FONT_FAMILY;
+		color: black;
+		text-decoration: none;
+		border:$tab-border;
+		border-left:0;
+		border-bottom:0;
+	}
+
+	li:first-child a[role="tab"]{
+		border-left:$tab-border;
+	}
+
+	a[aria-selected="true"],
+	a:hover,
+	a:focus {
+		background-color: $RED;
+		color: white;
+	}
+}
+
+[role="tabpanel"]{
+	display: block;
+
+	&[aria-hidden="true"]{
+		display: none;
+	}
+}

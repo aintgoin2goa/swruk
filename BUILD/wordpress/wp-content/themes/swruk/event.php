@@ -6,11 +6,26 @@
 	<h1 class="page-header"><?php the_title(); ?></h1>
 	<div class="grid-container">
 		<div class="free-text-content">
+
+
 			<div class="image">
-				<p class="default-image">
-					<img src="<?php echo get_field('main_image')['url']; ?>" alt="<?php echo get_field('main_image')['caption']; ?>" title="<?php echo get_field('main_image')['title']; ?>" />
-				</p>
+				<img src="<?php echo get_field('main_image')['url']; ?>" alt="<?php echo get_field('main_image')['alt']; ?>" title="<?php echo get_field('main_image')['title']; ?>" />
 			</div>
+
+			<ul role="tablist">
+				<li><a id="why_tab" role="tab" href="#why">Why</a></li>
+				<li><a id="details_tab" role="tab" href="#details">Details</a></li>
+				<li><a id="logistics_tab" role="tab" href="#logistics">Logistics</a></li>
+				<li><a id="supporting-orgs_tab" role="tab" href="#supporting-orgs">Supporters</a></li>
+			</ul>
+
+			<div id="why" class="tabpanel" role="tabpanel" aria-labelled-by="why_tab">
+				<h2>Why</h2>
+				<?php the_field('text'); ?>
+			</div>
+
+			<div id="details" class="tabpanel" role="tabpanel" aria-labelled-by="details_tab">
+				<h2>Details</h2>
 				<div class="details">
 					<dl>
 						<dt>
@@ -29,30 +44,29 @@
 						<dd><?php the_field('where'); ?></dd>
 					</dl>
 				</div>
-
-				<div class="text">
-
-						<?php the_field('text'); ?>
-					<p class="facebook-button">
-						<a class="button" href="<?php the_field('facebook_url'); ?>">
-							<svg class="icon facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
-								<path d="M14.5 0h-13c-0.825 0-1.5 0.675-1.5 1.5v13c0 0.825 0.675 1.5 1.5 1.5h6.5v-7h-2v-2h2v-1c0-1.653 1.347-3 3-3h2v2h-2c-0.55 0-1 0.45-1 1v1h3l-0.5 2h-2.5v7h4.5c0.825 0 1.5-0.675 1.5-1.5v-13c0-0.825-0.675-1.5-1.5-1.5z"></path>
-							</svg>
-							See event on Facebook
-						</a>
-					</p>
-				</div>
-
-
-			<div class="supporting-orgs">
-				<h2>Supporting Organisations</h2>
-				<?php the_field('supporting_organisations'); ?>
 			</div>
 
+			<div id="logistics" class="tabpanel" role="tabpanel" aria-labelled-by="logistics_tab">
+				<h2>Logistics</h2>
+				<?php the_field('logistics'); ?>
+			</div>
+
+			<div id="supporting-orgs" class="tabpanel" role="tabpanel" aria-labelled-by="supporting-orgs_tab">
+				<h2>Supporting Organisations</h2>
+				<div class="supporting-orgs">
+					<?php the_field('supporting_organisations'); ?>
+				</div>
+			</div>
+
+			<p class="facebook-button">
+				<a class="button" href="<?php the_field('facebook_url'); ?>">
+					<svg class="icon facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+						<path d="M14.5 0h-13c-0.825 0-1.5 0.675-1.5 1.5v13c0 0.825 0.675 1.5 1.5 1.5h6.5v-7h-2v-2h2v-1c0-1.653 1.347-3 3-3h2v2h-2c-0.55 0-1 0.45-1 1v1h3l-0.5 2h-2.5v7h4.5c0.825 0 1.5-0.675 1.5-1.5v-13c0-0.825-0.675-1.5-1.5-1.5z"></path>
+					</svg>
+					See event on Facebook
+				</a>
+			</p>
 		</div>
-
-
-
 	</div>
 
 <?php get_template_part('template-parts/footer'); ?>

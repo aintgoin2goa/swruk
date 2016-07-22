@@ -28,6 +28,7 @@ export function init(){
 	let check = checkCanvasHeight.bind(null, canvas, footer);
 	check();
 	window.addEventListener('resize', check);
+	window.addEventListener('footer', check);
 }
 
 

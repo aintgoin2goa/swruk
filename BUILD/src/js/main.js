@@ -8,7 +8,9 @@ const components = [
 	require('./menu'),
 	require('./footer'),
 	require('./contact'),
-	require('./write')
+	require('./write'),
+	require('./tabs'),
+	require('./frame')
 ];
 
 function init(){
