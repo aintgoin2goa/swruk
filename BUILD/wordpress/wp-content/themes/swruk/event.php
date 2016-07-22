@@ -33,7 +33,6 @@
 				<div class="text">
 
 						<?php the_field('text'); ?>
-					<?php if(the_field('facebook_url')): ?>
 					<p class="facebook-button">
 						<a class="button" href="<?php the_field('facebook_url'); ?>">
 							<svg class="icon facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
@@ -42,7 +41,6 @@
 							See event on Facebook
 						</a>
 					</p>
-					<?php endif; ?>
 				</div>
 
 
