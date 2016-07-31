@@ -83,8 +83,16 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
 
+
+
+define('WP_DEBUG', true);
+define( 'WP_DEBUG_LOG', true );
+define('WP_DEBUG_DISPLAY', false);
+
+ ini_set( 'upload_max_size' , '8M' );
+ ini_set( 'post_max_size', '8M');
+ ini_set( 'max_execution_time', '300' );
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
@@ -95,8 +103,8 @@ if ( !defined('ABSPATH') )
 require_once(ABSPATH . 'wp-settings.php');
 
 define('FS_METHOD', 'direct');
-//
-//define( 'DBI_AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY') );
-//define( 'DBI_AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY') );
+
+define( 'DBI_AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY_ID') );
+define( 'DBI_AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY') );
 
 

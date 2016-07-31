@@ -1,4 +1,9 @@
 <?php
+
+ ini_set( 'upload_max_size' , '8M' );
+ ini_set( 'post_max_size', '8M');
+ ini_set( 'max_execution_time', '300' );
+
 include 'static_asset_version.php';
 
 if(getenv('WP_ENV' !== 'production')){
@@ -70,6 +75,9 @@ function swruk_action_url($action){
 	echo "/wp-content/themes/swruk/actions/{$action}.php";
 }
 
+add_filter( 'fu_is_debug', '__return_true' );
 add_action( 'init', 'remove_editor_init' );
 add_action( 'widgets_init', 'init_widget' );
+
 ?>
+
