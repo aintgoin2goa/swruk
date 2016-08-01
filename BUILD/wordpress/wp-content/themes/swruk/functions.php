@@ -1,8 +1,7 @@
 <?php
+add_filter('xmlrpc_enabled', '__return_false');
 
- ini_set( 'upload_max_size' , '8M' );
- ini_set( 'post_max_size', '8M');
- ini_set( 'max_execution_time', '300' );
+
 
 include 'static_asset_version.php';
 
