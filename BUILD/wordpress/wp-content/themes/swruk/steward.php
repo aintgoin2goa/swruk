@@ -12,7 +12,7 @@
 
 				<div class="form-container">
 
-<iframe id="form_frame" src="https://docs.google.com/forms/d/e/1FAIpQLSfCtxCTlltZHcquTpeMSp1xJbXeg1qECVUM4Ex1Kp8XIQECmw/viewform?embedded=true" width="600" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>					</div>
+<iframe id="form_frame" src="https://docs.google.com/forms/d/e/1FAIpQLSfCtxCTlltZHcquTpeMSp1xJbXeg1qECVUM4Ex1Kp8XIQECmw/viewform?embedded=true" width="600" height="2000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>					</div>
 			</div>
 		</div>
 	<?php endwhile; ?>
