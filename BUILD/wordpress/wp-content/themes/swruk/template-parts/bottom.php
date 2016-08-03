@@ -1,9 +1,8 @@
 
-<nav class="menu" id="menu">
+<nav class="menu menu--mobile">
     <h4>MENU</h4>
     <?php
-    	$html = wp_nav_menu(array('menu' => 'main-menu', 'echo' => false));
-    	echo preg_replace('~>\s+<~', '><', $html);
+    	wp_nav_menu(array('menu' => 'main-menu-2'));
 	?>
 </nav>
 

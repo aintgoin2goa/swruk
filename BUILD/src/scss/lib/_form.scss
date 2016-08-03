@@ -95,5 +95,24 @@ form {
 	button {
 		font-size:1em;
 	}
-
 }
+
+.file_input_uploadform {
+	.file_input_button, .file_input_button_hover {
+		@include button;
+	}
+}
+
+#wordpress_file_upload_title_1 {
+	@include visuallyHidden;
+}
+
+#wordpress_file_upload_textbox_1 {
+	display: block;
+
+	.file_input_textbox {
+		background: transparent;
+		border: 0;
+	}
+ }
+

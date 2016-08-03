@@ -1,3 +1,6 @@
+sinclude .env
+export $(shell [ -f .env ] && sed 's/=.*//' .env)
+
 build-css:
 	node-sass src/scss/main.scss static/styles.css  --source-map-embed
 	node-sass src/scss/ie8.scss static/oldie.css  --source-map-embed

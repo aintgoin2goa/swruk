@@ -24,36 +24,40 @@ button {
   }
 }
 
-.button {
-  text-decoration: none;
-  background-color:white;
-  padding:0.25em 0.5em;
-  color: $DEFAULT_LINK_COLOR;
-  font-family: $TITLE_FONT_FAMILY;
-  box-shadow: 0px 0px 2px 1px #{$RED_TRANSPARENT};
-  @include transition(all 250ms ease-out);
-
-  .icon {
-	fill:$DEFAULT_LINK_COLOR;
-	position: relative;
-	top:2px;
-  }
-
-  &:after {
-	content: '⇢';
-	padding-left:0.5em;
-  }
-
-  &:hover {
-	background-color: $DEFAULT_LINK_COLOR;
-	color:$DEFAULT_LINK_HOVER_COLOR;
+@mixin button {
+	text-decoration: none;
+	background-color:white;
+	padding:0.25em 0.5em;
+	color: $DEFAULT_LINK_COLOR;
+	font-family: $TITLE_FONT_FAMILY;
+	box-shadow: 0px 0px 2px 1px #{$RED_TRANSPARENT};
+	@include transition(all 250ms ease-out);
 
 	.icon {
-	  fill:$DEFAULT_LINK_HOVER_COLOR;
+		fill:$DEFAULT_LINK_COLOR;
+		position: relative;
+		top:2px;
 	}
-  }
+
+	&:after {
+		content: '⇢';
+		padding-left:0.5em;
+	}
+
+	&:hover {
+		background-color: $DEFAULT_LINK_COLOR;
+		color:$DEFAULT_LINK_HOVER_COLOR;
+
+		.icon {
+			fill:$DEFAULT_LINK_HOVER_COLOR;
+		}
+	}
 
 
+}
+
+.button {
+	@include button;
 }
 
 header .button {

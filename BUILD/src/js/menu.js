@@ -43,7 +43,7 @@ function addEventToMenuButton(canvas, menu, button){
 
 export function init(){
 	let canvas = document.querySelector(canvasSelector);
-	let menu = document.querySelector('nav.menu');
+	let menu = document.querySelector('nav.menu--mobile');
 	getMenuButtonEls().forEach(addEventToMenuButton.bind(null, canvas, menu));
 	canvas.addEventListener('click', hideMenu.bind(null, canvas, menu));
 }

@@ -1,16 +1,35 @@
 $NAV_PADDING:10px;
 
-nav{
+.menu {
+	ul{
+		margin:0;
+		padding:0;
+		list-style-type: none;
+	}
+
+	a{
+		text-decoration: none;
+		color:$NAV_COLOR;
+		display:block;
+		width:100%;
+		height:100%;
+		padding:0.5em;
+	}
+
+	a:hover, a:focus, li.current-menu-item a{
+		background-color: $NAV_HIGHLIGHT_COLOR;
+		color:$NAV_HIGHLIGHT_TEXT_COLOR;
+	}
+}
+
+.menu--mobile{
   margin:0;
   width:100%;
-  text-align:right;
-  background-color: $NAV_BG;
+  text-align:left;
 
   @include respond($NAV_SNAP_POINT) {
-	position:absolute;
-	top:50px;
+	display: none;
   }
-
 
   .js & {
 	position: fixed;
@@ -27,26 +46,6 @@ nav{
 	  width:30%;
 	}
 
-	@include respond($NAV_SNAP_POINT) {
-	  height:$NAV_STRIP_HEIGHT;
-	  position: fixed;
-	  display:block;
-	  width:100%;
-	  top:$NAV_STRIP_TOP_L;
-	  left:0;
-	  bottom:auto;
-	  z-index: 5;
-		text-align: left;
-		@include transition(none);
-
-	}
-
-	@include respond($BREAKPOINT_XL) {
-	  top:$NAV_STRIP_TOP_XL;
-
-	}
-
-
 	h4{
 	  display:none;
 	}
@@ -58,57 +57,73 @@ nav{
 	padding:$NAV_PADDING;
   }
 
-  ul{
-	margin:0;
-	padding:0;
-	list-style-type: none;
-  }
-
   li{
 	display: block;
 	padding:0;
 	margin:0;
-	border-bottom:1px solid $HEADER_BG;
+	border-bottom: 1px solid $NAV_HIGHLIGHT_COLOR;
+	font-size:1.1em;
+  }
 
-	@include respond($NAV_SNAP_POINT) {
-	  display: inline-block;
-	  border:0;
+	ul.sub-menu li {
+		padding-left: $NAV_PADDING*2;
+		border-bottom: 0;
+		font-size:0.9em;
 	}
-  }
-
-  a{
-	text-decoration: none;
-	color:$NAV_COLOR;
-  	display:block;
-	width:100%;
-	height:100%;
-	padding:0.5em;
-  }
-
-  a:hover, a:focus, li.current-menu-item a{
-	background-color: $NAV_HIGHLIGHT_COLOR;
-	color:$NAV_HIGHLIGHT_TEXT_COLOR;
-  }
-
-
 }
 
-.js.csstransforms3d nav {
+.js.csstransforms3d .menu--mobile {
   display: block;
   z-index:1;
   @include transform(translate3d(100%,0,0));
-
-  @include respond($NAV_SNAP_POINT){
-	@include transform(translate3d(0,0,0));
-	z-index: 3;
-  }
 }
 
-.js nav.open {
+.js .menu--mobile.open {
   display: block;
+
+	@include respond($NAV_SNAP_POINT) {
+		display: none;
+	}
 }
 
-.js.csstransforms3d nav.open {
+.js.csstransforms3d .menu--mobile.open {
   @include transform(translate3d(0,0,0));
 }
 
+.menu--desktop {
+	display: none;
+	width:100%;
+	background-color: $NAV_BG;
+
+	@include respond($NAV_SNAP_POINT){
+		display: block;
+	}
+
+	ul {
+		font-size:0;
+	}
+
+	li {
+		margin: 0;
+		display: inline-block;
+		font-size: $BASE_FONT_SIZE;
+		position: relative;
+	}
+
+	ul.sub-menu {
+		display: none;
+		position:absolute;
+		background-color: $NAV_BG;
+		min-width: 100%;
+
+		li {
+			display: block;
+			position: static;
+			white-space: nowrap;
+		}
+	}
+
+	li:hover > .sub-menu {
+		display: block;
+	}
+}

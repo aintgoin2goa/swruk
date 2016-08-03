@@ -44,5 +44,10 @@
 			</svg>
 			<span>MENU</span>
 		</a>
+<nav class="menu menu--desktop">
+    <?php
+    	wp_nav_menu(array('menu' => 'main-menu-2'));
+	?>
+</nav>
 
 </header>

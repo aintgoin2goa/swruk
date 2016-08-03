@@ -5,11 +5,12 @@
 $TITLE_FONT_FAMILY: "shenzhenindustrial", arial, sans-serif;
 $BODY_COPY_FONT_FAMILY: "Cabin", Helvetica, Arial, sans-serif;
 $THIN_FONT_FAMILY: "Cooper-Hewitt-Thin", Helvetiva, Arial, sans-serif;
+$BASE_FONT_SIZE:16px;
 
 body{
   font-family: $BODY_COPY_FONT_FAMILY;
   color:$BODY_TEXT_COLOR;
-  font-size: 16px;
+  font-size: $BASE_FONT_SIZE;
 
   @include respond($BREAKPOINT_L){
 	font-size:18px;

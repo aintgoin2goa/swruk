@@ -12,20 +12,17 @@ header{
 	padding:0 80px $HEADER_PADDING 0;
 	max-width: 100%;
 	font-size:30px;
-	margin:0 $HEADER_PADDING 0 45px;
+	margin:0 $HEADER_PADDING $HEADER_PADDING 45px;
 	letter-spacing: -1px;
 	line-height: 0.9em;
 	padding-top:3px;
-	height:$HEADER_HEIGHT_XS;
 
 	@include respond($NAV_SNAP_POINT) {
 	  font-size:50px;
-	  height: $HEADER_HEIGHT_L;
 	}
 
 	@include respond($BREAKPOINT_XL) {
 	  font-size: 80px;
-	  height: $HEADER_HEIGHT_XL;
 	}
 
 	span {
