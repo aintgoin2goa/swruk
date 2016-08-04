@@ -18,7 +18,25 @@
  * @package WordPress
  */
 
+ $http_host = $_SERVER['HTTP_HOST'];
+ $whitelist = array (
+    'swruk.org',
+    'www.sruk.org',
+    'swruk.local'
+ );
 
+ $allowed = false;
+
+ foreach($whitelist as $host){
+    if(strpos($http_host, $host) !== FALSE){
+        $allowed = true;
+    }
+ }
+
+ if(!$allowed){
+    header('HTTP/1.0 403 Forbidden');
+    exit();
+ }
 
 	define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 	define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/');
