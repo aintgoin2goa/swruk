@@ -74,9 +74,15 @@ function swruk_action_url($action){
 	echo "/wp-content/themes/swruk/actions/{$action}.php";
 }
 
-add_filter( 'fu_is_debug', '__return_true' );
 add_action( 'init', 'remove_editor_init' );
 add_action( 'widgets_init', 'init_widget' );
+
+function wfu_before_upload_handler($changable_data, $additional_data){
+    error_log("About to upload file: " . print_r($changable_data, true) . print_r($additional_data, true));
+}
+
+add_filter('wfu_before_upload', 'wfu_before_upload_handler', 10, 2);
+
 
 ?>
 
