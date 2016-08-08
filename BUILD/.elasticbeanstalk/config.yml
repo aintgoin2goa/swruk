@@ -20,4 +20,4 @@ files:
       post_max_size = 64M
 container_commands:
   00_fix_script_permissions:
-    command: "chmod -R 0777 /wordpress/wp-content/uploads/"
+    command: "chmod -R 0777 /var/www/html/wordpress/wp-content/uploads/"
