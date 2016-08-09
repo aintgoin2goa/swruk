@@ -18,6 +18,17 @@ files:
     content: |
       upload_max_filesize = 64M
       post_max_size = 64M
+  files:
+    "/opt/elasticbeanstalk/tasks/taillogs.d/wordpress.conf" :
+      mode: "000755"
+      owner: root
+      group: root
+      content: |
+        /var/www/html/wordpress/wp-content/debug.log
+      "/var/www/html/wordpress/wp-content/debug.log" :
+            mode: "000755"
+            owner: root
+            group: root
 container_commands:
   00_fix_script_permissions:
     command: "chmod -R 0777 /var/www/html/wordpress/wp-content/uploads/"

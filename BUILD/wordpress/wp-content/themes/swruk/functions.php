@@ -77,12 +77,32 @@ function swruk_action_url($action){
 add_action( 'init', 'remove_editor_init' );
 add_action( 'widgets_init', 'init_widget' );
 
-function wfu_before_upload_handler($changable_data, $additional_data){
-    error_log("About to upload file: " . print_r($changable_data, true) . print_r($additional_data, true));
+function galleria($atts){
+    $output =  '<div class="galleria">';
+    foreach(explode(',', $atts['ids']) as $id){
+        $output .= '<a href="' . wp_get_attachment_url($id) . '">';
+        $output .= '<img src="' . wp_get_attachment_thumb_url($id) .'" />';
+        $output .= '</a>';
+    }
+    $output .= '</div>';
+
+    return $output;
 }
 
-add_filter('wfu_before_upload', 'wfu_before_upload_handler', 10, 2);
+function my_gallery_shortcode( $output = '', $atts, $instance ) {
+	$return = $output; // fallback
 
+	// retrieve content of your own gallery function
+	$my_result = galleria( $atts );
+
+	// boolean false = empty, see http://php.net/empty
+	if( !empty( $my_result ) ) {
+		$return = $my_result;
+	}
+
+	return $return;
+}
+
+add_filter( 'post_gallery', 'my_gallery_shortcode', 10, 3 );
 
 ?>
-
