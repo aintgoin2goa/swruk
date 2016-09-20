@@ -5,7 +5,7 @@
   background:transparent;
   overflow: hidden;
 
-  p, h4, h3 {
+  p, h4, h3, h2 {
 	padding:0 $CONTENT_PADDING;
   }
 
@@ -109,4 +109,61 @@
 
 
   }
+}
+
+
+.home--new {
+	.home-section.who {
+		p:first-child {
+			margin-top: 0;
+
+			a:hover {
+				background-color: transparent;
+			}
+		}
+
+		img {
+			width: 100%;
+			float: none;
+		}
+
+		a.button {
+			margin-right: $CONTENT_PADDING*2;
+		}
+	}
+
+	.promo {
+		background-color: $YELLOW_TRANSPARENT;
+		margin: $CONTENT_PADDING 0;
+		padding: $CONTENT_PADDING/2 $CONTENT_PADDING;
+		box-shadow: 0px 10px 5px -5px rgba(0,0,0,0.3);
+
+		@include respond($BREAKPOINT_M){
+			margin: 0;
+		}
+
+		h1.banner-heading {
+			background-color: transparent;
+			margin: 0;
+			padding: 0;
+		}
+
+		p {
+			padding: 0;
+		}
+	}
+
+	.facebook-container.small {
+		@include respond($BREAKPOINT_M){
+			display: none;
+		}
+	}
+
+	.facebook-container.large {
+		display: none;
+
+		@include respond($BREAKPOINT_M){
+			display: block;
+		}
+	}
 }

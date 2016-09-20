@@ -6,7 +6,11 @@
   @include transform(translate3d(0, 0, 0));
   @include filter(brightness(1));
 
-  @include respond($NAV_SNAP_POINT) {
+	@include respond($BREAKPOINT_M){
+		padding-top:60px;
+	}
+
+  @include respond($BREAKPOINT_L) {
 	padding-top: $HEADER_HEIGHT_L;
   }
 
