@@ -22,7 +22,12 @@ const data = {
 };
 
 co(function* (){
-	yield mkdir(destDir);
+	try{
+		yield mkdir(destDir);
+	}catch(e){
+		//ignore
+	}
+
 	let files = yield readdir(srcDir);
 	for(let file of files){
 		if(file.indexOf('.hbs') === -1){

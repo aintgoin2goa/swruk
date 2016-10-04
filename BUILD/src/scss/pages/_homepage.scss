@@ -37,7 +37,7 @@
 
 	img {
 	  width:100%;
-	  box-shadow: 0px 0px 3px 2px white;
+	  box-shadow: 0px 0px 10px 1px black;
 	}
 
   @include respond($BREAKPOINT_L){
@@ -47,7 +47,7 @@
 	  img {
 		  float:left;
 		  width:60%;
-		  margin:0 20px 10px 0;
+		  margin:5px 20px 10px 0;
 	  }
   }
 

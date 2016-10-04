@@ -62,11 +62,11 @@
 				<?php the_field('enquiries_header'); ?>
 			</h2>
 			<div class="contact-content">
-				<?php if($_GET['messagesent']): ?>
-                						<p>Your message has been sent.  <a href="/contact">Click here to send another</a></p>
-                					<?php else: ?>
-				<p><?php the_field('enquiries_text'); ?></p>
-				<div class="form-container column-1-2">
+				<?php if(array_key_exists('messagesent', $_GET)): ?>
+                    <p>Your message has been sent.  <a href="/contact">Click here to send another</a></p>
+                <?php else: ?>
+                    <p><?php the_field('enquiries_text'); ?></p>
+                    <div class="form-container column-1-2">
 
 						<form novalidate class="contact-form" method="post" action="<?php swruk_action_url('enquiry'); ?>">
 							<fieldset class="hidden">
@@ -107,7 +107,7 @@
 							</fieldset>
 						</form>
 
-				</div>
+				    </div>
 				<?php endif; ?>
 			</div>
 		</div>
