@@ -5,7 +5,8 @@ if(!array_key_exists('uri', $_POST)){
 	exit();
 }
 
-$admin_email = 'ros@swruk.org';
+//$admin_email = 'ros@swruk.org';
+$admin_email = 'paul.wilson66@gmail.com';
 
 
 $allowed_html = array();
