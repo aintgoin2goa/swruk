@@ -23,8 +23,7 @@
     'swruk.org',
     'www.sruk.org',
     'swruk.local',
-    'swruk.herokuapp.com'
- );
+qaaus0sq );
 
  $allowed = false;
 
