@@ -65,7 +65,6 @@ if($has_error === true){
 	$apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
     $response = $sg->client->mail()->send()->post($mail);
-    print_r($response);
 	header('Location: /contact?messagesent=true&statuscode=' . $response->statusCode());
 }
 
