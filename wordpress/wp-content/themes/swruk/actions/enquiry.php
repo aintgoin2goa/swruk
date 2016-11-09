@@ -1,13 +1,13 @@
 <?php
 require "../../../../wp-load.php";
+require '../../../../../vendor/autoload.php';
+
 
 if(!array_key_exists('uri', $_POST)){
 	exit();
 }
 
-//$admin_email = 'ros@swruk.org';
-$admin_email = 'paul.wilson66@gmail.com';
-
+$admin_email = 'ros@swruk.org';
 
 $allowed_html = array();
 
@@ -46,7 +46,7 @@ function get_email_text($text){
 }
 
 
-if(has_error === true){
+if($has_error === true){
 	$url_parts = array();
     foreach($errors as $field=>$message){
     	$url_parts[] = urlencode($message);
@@ -55,12 +55,15 @@ if(has_error === true){
     $url = '?errors=' .urlencode(implode(',', $url_parts));
     header('Location: ' . $_POST['uri'] . $url);
 }else{
-	$to = $admin_email;
+	$to = new SendGrid\Email(null, $admin_email);
 	$subject = 'Enquiry from swruk.org';
-	$message = $message . "\n\n" . "From: " . $name;
-	$headers = array("Reply-To: {$email}");
-	wp_mail($to, $subject, $message, $headers);
-	header('Location: /contact?messagesent=true');
+	$message = new SendGrid\Content('text/plain', $message . "\n\n" . "From: " . $name);
+	$from = new SendGrid\Email(null, $email);
+	$mail = new SendGrid\Mail($from, $subject, $to, $message);
+	$apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
+    $response = $sg->client->mail()->send()->post($mail);
+	header('Location: /contact?messagesent=true&statuscode=' . $response->statusCode());
 }
 
 
