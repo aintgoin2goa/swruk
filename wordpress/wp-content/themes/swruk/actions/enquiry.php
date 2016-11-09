@@ -59,7 +59,9 @@ if($has_error === true){
 	$subject = 'Enquiry from swruk.org';
 	$message = new SendGrid\Content('text/plain', $message . "\n\n" . "From: " . $name);
 	$from = new SendGrid\Email(null, $email);
+	$bcc = new SendGrid\Email(null, 'paul.wilson66@gmail.com');
 	$mail = new SendGrid\Mail($from, $subject, $to, $message);
+	$mail->personalization[0].addBcc($bcc);
 	$apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
     $response = $sg->client->mail()->send()->post($mail);

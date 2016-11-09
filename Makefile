@@ -36,7 +36,7 @@ deploy-static: increment-static-version build-static-prod
 increment-static-version:
 	node scripts/incrementStaticVersion.js
 
-deploy-wordpress:
+deploy-wp:
 	git push heroku master
 
 deploy: depoy-static deploy-wordpress
