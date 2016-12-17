@@ -43,7 +43,8 @@ $NAV_PADDING:10px;
 	@include transition(all $DEFAULT_ANIMATION_LENGTH ease-out);
 
 	@include respond($BREAKPOINT_M){
-	  width:30%;
+		top: 50px;
+	 	width:30%;
 	}
 
 	h4{

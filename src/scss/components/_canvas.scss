@@ -7,7 +7,7 @@
   @include filter(brightness(1));
 
 	@include respond($BREAKPOINT_M){
-		padding-top:60px;
+		padding-top:50px;
 	}
 
   @include respond($BREAKPOINT_L) {
