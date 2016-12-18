@@ -1,5 +1,5 @@
-BUILD/static/
-BUILD/node_modules/
+/static/
+/node_modules/
 .DS_Store
 
 # Elastic Beanstalk Files
@@ -8,7 +8,6 @@ BUILD/node_modules/
 !.elasticbeanstalk/*.global.yml
 swruk.zip
 debug.log
-BUILD/wordpress/google.json
 .env
 .idea/
 /vendor/

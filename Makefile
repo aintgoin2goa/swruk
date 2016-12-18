@@ -40,4 +40,4 @@ deploy-wp:
 	git push
 	git push heroku master
 
-deploy: deploy-static deploy-wordpress
+deploy: deploy-static deploy-wp
