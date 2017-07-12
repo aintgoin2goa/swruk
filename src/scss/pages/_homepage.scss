@@ -133,7 +133,7 @@
 	}
 
 	.promo {
-		background-color: $YELLOW_TRANSPARENT;
+		background-color: $HOME_PROMO_BG;
 		margin: $CONTENT_PADDING 0;
 		padding: $CONTENT_PADDING/2 $CONTENT_PADDING;
 		box-shadow: 0px 10px 5px -5px rgba(0,0,0,0.3);
@@ -150,6 +150,14 @@
 
 		p {
 			padding: 0;
+		}
+
+		a {
+			color: white;
+		}
+
+		a.button {
+			color: $DEFAULT_LINK_COLOR;
 		}
 	}
 
