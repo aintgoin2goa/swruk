@@ -5,7 +5,7 @@ Plugin URI:   https://wordpress.org/plugins/wp-attachments
 Description: Powerful solution to manage and show your WordPress media in posts and pages
 Author: Marco Milesi
 Author URI:   https://wordpress.org/plugins/wp-attachments
-Version: 4.3.4
+Version: 4.4
 Text Domain: wp-attachments
 Domain Path: /languages
 */
@@ -140,8 +140,6 @@ function wpatt_content_filter($content)
             $somethingtoshow = 1;
 
             $class = "post-attachment mime-" . sanitize_title($attachment->post_mime_type);
-
-            if ($wpatt_option_targetblank_get == '1') { $content_l .= 'target="_blank" '; }
 
             if ((file_exists(get_attached_file($attachment->ID)))) {
                 $wpatt_fs = wpatt_format_bytes(filesize(get_attached_file($attachment->ID)));

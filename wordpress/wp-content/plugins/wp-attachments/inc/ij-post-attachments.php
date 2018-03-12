@@ -226,16 +226,17 @@ class IJ_Post_Attachments
 
 $IJ_Post_Attachments = IJ_Post_Attachments::getInstance();
 
-add_action( 'save_post', 'wpa_meta_box_save' );
-function wpa_meta_box_save( $post_id )
-{
+add_action( 'save_post', function( $post_id ) {
     
-    // Bail if we're doing an auto save
-    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-     
-    // if our current user can't edit this post, bail
-    if( !current_user_can( 'edit_post' ) ) return;
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
     
-    update_post_meta($post_id, "wpa_off", $_POST["wpa_off"]);
-}
+    if ( empty( $post_id ) ) {
+        return;
+    }
+    
+
+	update_post_meta($post_id, "wpa_off", isset($_POST["wpa_off"]));
+});
 ?>
