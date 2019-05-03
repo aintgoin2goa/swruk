@@ -38,6 +38,6 @@ increment-static-version:
 
 deploy-wp:
 	git push
-	git push heroku master
+	git push heroku-18 master
 
 deploy: deploy-static deploy-wp
