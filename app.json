@@ -1,0 +1,20 @@
+{
+    "name": "SWRUK",
+    "stack": "heroku-18",
+    "addons": [
+      {
+        "plan": "cleardb",
+        "as": "CLEARDB_DATABASE"
+      },
+      {
+        "plan": "sendgrid",
+        "as": "SENDGRID"
+      }
+    ],
+    "formation": {
+      "web": {
+        "size": "hobby",
+        "quantity": 1
+      }
+    }
+  }
