@@ -1,6 +1,7 @@
 sinclude .env
 export $(shell [ -f .env ] && sed 's/=.*//' .env)
-app=swruk-heroku-18 
+branch=heroku-18
+app=swruk-$(branch)
 
 .PHONY: db
 
@@ -53,11 +54,11 @@ increment-static-version:
 
 deploy-db:
 	mysqldump --host 127.0.0.1 --user=root --password=password $(SWRUK_DB) > db/backup/backup.sql
-	mysql user=$(SWRUK_DB_USER) password=$(SWRUK_DB_PASSWORD) database=$(SWRUK_DB) < db/backup/backup.sql
+	mysql --host=$(SWRUK_DB_HOST) --user=$(SWRUK_DB_USER) --password=$(SWRUK_DB_PASSWORD) $(SWRUK_DB) < db/backup/backup.sql
 
 deploy-wp:
 	git push
-	git push $(app) master
+	git push $(branch) master
 
 deploy: deploy-static deploy-wp
 
