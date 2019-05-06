@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  wp:
+    image: wordpress
+    restart: always
+    volumes:
+      - ./wordpress:/var/www/html:delegated
+    ports:
+      - "8080:80"
+    env_file: 
+      - .env
+    environment:
+      SWRUK_DB_HOST: db
+      SWRUK_DB_USER: root
+      SWRUK_DB_PASSWORD: password
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/seed/:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"

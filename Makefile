@@ -1,5 +1,20 @@
 sinclude .env
 export $(shell [ -f .env ] && sed 's/=.*//' .env)
+app=swruk-heroku-18 
+
+.PHONY: db
+
+env:
+	rm .env
+	heroku config --app $(app) -s > .env
+
+db:
+	rm -rf db
+	mkdir -p db/backup
+	mkdir -p db/data
+	mysqldump --all-databases --host=$(SWRUK_DB_HOST) --password=$(SWRUK_DB_PASSWORD) --user=$(SWRUK_DB_USER) > db/seed/dump.sql
+	docker-compose up --force-recreate db
+
 
 build-css:
 	node-sass src/scss/main.scss static/styles.css  --source-map-embed
@@ -36,8 +51,15 @@ deploy-static: increment-static-version build-static-prod
 increment-static-version:
 	node scripts/incrementStaticVersion.js
 
+deploy-db:
+	mysqldump --host 127.0.0.1 --user=root --password=password $(SWRUK_DB) > db/backup/backup.sql
+	mysql user=$(SWRUK_DB_USER) password=$(SWRUK_DB_PASSWORD) database=$(SWRUK_DB) < db/backup/backup.sql
+
 deploy-wp:
 	git push
-	git push heroku-18 master
+	git push $(app) master
 
 deploy: deploy-static deploy-wp
+
+run: 
+	docker-compose up
