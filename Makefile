@@ -1,18 +1,20 @@
 sinclude .env
 export $(shell [ -f .env ] && sed 's/=.*//' .env)
-branch=heroku-18
-app=swruk-$(branch)
+branch=heroku
+app=swruk
 
 .PHONY: db
 
 env:
 	rm .env
 	heroku config --app $(app) -s > .env
+	echo "WP_ENV=localdev" >> .env
 
 db:
 	rm -rf db
 	mkdir -p db/backup
 	mkdir -p db/data
+	mkdir -p db/seed
 	mysqldump --all-databases --host=$(SWRUK_DB_HOST) --password=$(SWRUK_DB_PASSWORD) --user=$(SWRUK_DB_USER) > db/seed/dump.sql
 	docker-compose up --force-recreate db
 
@@ -56,7 +58,7 @@ deploy-db:
 	mysqldump --host 127.0.0.1 --user=root --password=password $(SWRUK_DB) > db/backup/backup.sql
 	mysql --host=$(SWRUK_DB_HOST) --user=$(SWRUK_DB_USER) --password=$(SWRUK_DB_PASSWORD) $(SWRUK_DB) < db/backup/backup.sql
 
-deploy-wp:
+deploy-wp: deploy-db
 	git push
 	git push $(branch) master
 

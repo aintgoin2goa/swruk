@@ -61,11 +61,10 @@ function init_widget(){
 }
 
 function swruk_asset_file($file){
-	if(getenv('WP_ENV') === 'localdev'){
-		$host = 'http://swrukstatic.local';
-	}else{
-		$host = 'http://static.swruk.org';
-	}
+    $env_host = getenv('SWRUK_STATIC_HOST');
+    echo $env_host;
+    $prod_host = 'http://static.swruk.org';
+	$host = $env_host ? $env_host : $prod_host;
 
 	echo "{$host}/{$file}?v=" . STATIC_ASSET_VERSION;
 }
