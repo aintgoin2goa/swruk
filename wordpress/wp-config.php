@@ -40,8 +40,8 @@
     exit();
  }
 
-define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
-define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST'] . '/');
+define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST'] . '/');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
