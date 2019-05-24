@@ -58,11 +58,11 @@ deploy-db:
 	mysqldump --host 127.0.0.1 --user=root --password=password $(SWRUK_DB) > db/backup/backup.sql
 	mysql --host=$(SWRUK_DB_HOST) --user=$(SWRUK_DB_USER) --password=$(SWRUK_DB_PASSWORD) $(SWRUK_DB) < db/backup/backup.sql
 
-deploy-wp: deploy-db
+deploy-wp:
 	git push
 	git push $(branch) master
 
-deploy: deploy-static deploy-wp
+deploy: deploy-static deploy-db deploy-wp
 
 run: 
 	docker-compose up
