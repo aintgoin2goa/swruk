@@ -1,4 +1,4 @@
-version: "3"
+version: "3.2"
 
 services:
   wp:
@@ -14,6 +14,7 @@ services:
       SWRUK_DB_HOST: db
       SWRUK_DB_USER: root
       SWRUK_DB_PASSWORD: password
+      SWRUK_STATIC_HOST: http://swruk.local:8181
 
   db:
     image: mysql:5.7
@@ -25,3 +26,13 @@ services:
       - ./db/seed/:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
+
+  static:
+    image: nginx:mainline-alpine
+    volumes:
+      - ./static:/var/www/swruk:delegated
+      - ./nginx/log/:/var/log/nginx/:delegated
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8181:80"
+    

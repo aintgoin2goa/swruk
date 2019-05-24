@@ -12,3 +12,4 @@ debug.log
 .idea/
 /vendor/
 db/
+nginx/log
