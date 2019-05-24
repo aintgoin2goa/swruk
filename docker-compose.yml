@@ -14,7 +14,7 @@ services:
       SWRUK_DB_HOST: db
       SWRUK_DB_USER: root
       SWRUK_DB_PASSWORD: password
-      SWRUK_STATIC_HOST: http://swruk.local:8181
+      SWRUK_STATIC_HOST: //swruk.local:8181
 
   db:
     image: mysql:5.7
