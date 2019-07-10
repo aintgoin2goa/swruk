@@ -7,7 +7,7 @@
 	<h1 class="page-header"><?php the_title(); ?></h1>
 	<div class="grid-container">
 
-		<div class="column-1-2 social-media">
+		<div class="column-1-1 social-media">
 			<h2 class="banner-heading">
 				<svg class="icon social-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="16" viewBox="0 0 18 16">
 					<path d="M12 12.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"></path>
@@ -31,27 +31,6 @@
 						Twitter
 					</a></li>
 				</ul>
-			</div>
-		</div>
-		<div class="column-1-2 mailing-list">
-			<h2 class="banner-heading">
-				<svg class="icon mailing-list-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
-					<path d="M14.5 2h-13c-0.825 0-1.5 0.675-1.5 1.5v10c0 0.825 0.675 1.5 1.5 1.5h13c0.825 0 1.5-0.675 1.5-1.5v-10c0-0.825-0.675-1.5-1.5-1.5zM6.23 8.6l-4.23 3.295v-7.838l4.23 4.543zM2.756 4h10.488l-5.244 3.938-5.244-3.938zM6.395 8.777l1.605 1.723 1.605-1.723 3.29 4.223h-9.79l3.29-4.223zM9.77 8.6l4.23-4.543v7.838l-4.23-3.295z"></path>
-				</svg>
-				<?php the_field('mailing_list_header'); ?>
-			</h2>
-			<div class="contact-content">
-				<p>
-					<?php the_field('mailing_list_text'); ?>
-				</p>
-				<p>
-					<a class="button" target="_blank" href="http://eepurl.com/by0-eP">
-						<svg class="icon email-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
-							<path d="M14.5 2h-13c-0.825 0-1.5 0.675-1.5 1.5v10c0 0.825 0.675 1.5 1.5 1.5h13c0.825 0 1.5-0.675 1.5-1.5v-10c0-0.825-0.675-1.5-1.5-1.5zM6.23 8.6l-4.23 3.295v-7.838l4.23 4.543zM2.756 4h10.488l-5.244 3.938-5.244-3.938zM6.395 8.777l1.605 1.723 1.605-1.723 3.29 4.223h-9.79l3.29-4.223zM9.77 8.6l4.23-4.543v7.838l-4.23-3.295z"></path>
-						</svg>
-						Sign up
-					</a>
-				</p>
 			</div>
 		</div>
 		<div class="column-1-1 enquiry-form">
