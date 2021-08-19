@@ -2,6 +2,7 @@
     "name": "paul.i.wilson/swruk",
     "type": "project",
     "require": {
-        "sendgrid/sendgrid": "^5.0"
+        "sendgrid/sendgrid": "^5.0",
+        "php": "7.1.0"
     }
 }
