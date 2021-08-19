@@ -3,6 +3,6 @@
     "type": "project",
     "require": {
         "sendgrid/sendgrid": "^5.0",
-        "php": "7.3.11"
+        "php": "7.3.13"
     }
 }
