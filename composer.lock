@@ -1,37 +1,44 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "24b95cd58dd4a85c94d8be69cbd14b37",
-    "content-hash": "d23b760af0c7242acef84277ecc138a9",
+    "content-hash": "cd20128acdc62ff99364593a4d9823b3",
     "packages": [
         {
             "name": "sendgrid/php-http-client",
-            "version": "3.1.0",
+            "version": "3.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/php-http-client.git",
-                "reference": "01c3fc4b94df008cfe03ffb467d4c6dbe6dcfb2c"
+                "reference": "7880d5aecc53856802130ba83af1dfcf942e9767"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/01c3fc4b94df008cfe03ffb467d4c6dbe6dcfb2c",
-                "reference": "01c3fc4b94df008cfe03ffb467d4c6dbe6dcfb2c",
+                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/7880d5aecc53856802130ba83af1dfcf942e9767",
+                "reference": "7880d5aecc53856802130ba83af1dfcf942e9767",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.4",
-                "squizlabs/php_codesniffer": "2.*"
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^5.7 || ^6.5",
+                "sebastian/version": "^1.0.6",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "suggest": {
+                "composer/ca-bundle": "Including this library will ensure that a valid CA bundle is available for secure connections"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "SendGrid": "lib/"
+                "psr-4": {
+                    "SendGrid\\": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -41,11 +48,11 @@
             "authors": [
                 {
                     "name": "Matt Bernier",
-                    "email": "dx@sendgrid.com"
+                    "email": "mbernier@twilio.com"
                 },
                 {
                     "name": "Elmer Thomas",
-                    "email": "elmer@thinkingserious.com"
+                    "email": "ethomas@twilio.com"
                 }
             ],
             "description": "HTTP REST client, simplified for PHP",
@@ -57,25 +64,29 @@
                 "rest",
                 "sendgrid"
             ],
-            "time": "2016-06-11 00:47:24"
+            "support": {
+                "issues": "https://github.com/sendgrid/php-http-client/issues",
+                "source": "https://github.com/sendgrid/php-http-client/tree/3.14.0"
+            },
+            "time": "2021-03-24T20:45:06+00:00"
         },
         {
             "name": "sendgrid/sendgrid",
-            "version": "5.0.4",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/sendgrid-php.git",
-                "reference": "1050d195525ff529036e7804f2c303261d65dca3"
+                "reference": "bed6a418706b09188fad2755de2e1c231ba74e69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/1050d195525ff529036e7804f2c303261d65dca3",
-                "reference": "1050d195525ff529036e7804f2c303261d65dca3",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/bed6a418706b09188fad2755de2e1c231ba74e69",
+                "reference": "bed6a418706b09188fad2755de2e1c231ba74e69",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3",
-                "sendgrid/php-http-client": "3.1.0"
+                "php": ">=5.6",
+                "sendgrid/php-http-client": "~3.7"
             },
             "replace": {
                 "sendgrid/sendgrid-php": "*"
@@ -103,7 +114,11 @@
                 "send",
                 "sendgrid"
             ],
-            "time": "2016-07-08 02:55:23"
+            "support": {
+                "issues": "https://github.com/sendgrid/sendgrid-php/issues",
+                "source": "https://github.com/sendgrid/sendgrid-php/tree/master"
+            },
+            "time": "2017-06-30T04:48:44+00:00"
         }
     ],
     "packages-dev": [],
@@ -112,6 +127,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": []
+    "platform": {
+        "php": "^7.3.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
