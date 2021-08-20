@@ -1,5 +1,10 @@
 .event {
 
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
 	h1 {
 		font-size: 1.7em;
 
@@ -48,10 +53,6 @@
 		}
 	}
 
-	.supporting-orgs {
-		@include span-columns(12);
-	}
-
 	.event-content {
 		width:100%;
 	}
@@ -68,10 +69,9 @@
 
 	.supporting-orgs {
 		h2 {
-			margin-bottom: 10px;
+			margin-bottom: 0px;
 		}
 
-		padding-top: 20px;
 		padding-bottom: 20px;
 
 		ul {
@@ -79,19 +79,54 @@
 			padding: 0;
 			list-style-type: none;
 
-			@include respond($BREAKPOINT_M){
-				@include columns(2);
-			}
+			// @include respond($BREAKPOINT_M){
+			// 	@include columns(2);
+			// }
 
+			// @include respond($BREAKPOINT_L){
+			// 	@include columns(3);
+			// }
+		}
+	}
+
+	.why-text {
+		max-width: 1000px;
+	}
+
+	#details {
+		@include respond($BREAKPOINT_L){
+			width: 50%;
+			float: right;
+		}
+	}
+
+	#why {
+		@include respond($BREAKPOINT_L){
+			width: 47%;
+			float: left;
+		}
+	}
+
+	#supporting-orgs {
+		@include respond($BREAKPOINT_L){
+			width: 50%;
+			float: right;
+		}
+
+		.facebook-button {
 			@include respond($BREAKPOINT_L){
-				@include columns(3);
+				display: none;
 			}
+	
+	
 		}
 	}
 
 	.js & .tabpanel > h2 {
 		display: none;
 	}
+
+	.clear {
+		clear: both;
+	}
 }
-
-
