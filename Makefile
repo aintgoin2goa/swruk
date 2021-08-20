@@ -60,7 +60,6 @@ deploy-db:
 
 deploy-wp:
 	git push
-	git push $(branch) master
 
 deploy: deploy-static deploy-db deploy-wp
 

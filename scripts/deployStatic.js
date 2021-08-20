@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const colors = require('colors');
 const mime = require('mime');
-const glob = require('glob-fs')({gitignore:true});
+const glob = require('glob-fs')({gitignore:false});
 const REGION = 'eu-west-1';
 const s3 = new AWS.S3({params: {Bucket: 'static.swruk.org'}, region:REGION});
 
@@ -18,6 +18,7 @@ function getContentType(filename){
 }
 
 function uploadFile(file){
+	console.log(`upload ${file}`)
 	var stream = fs.createReadStream(file);
 	var key = file.replace(process.cwd()+'/static/', '');
 
@@ -41,16 +42,21 @@ function uploadFile(file){
 
 
 function getFilesToUpload(){
-	let files = 'static/**/**';
-	return glob.readdirSync(files)
+	let fileGlob = 'static/**/*';
+	const files = glob.readdirSync(fileGlob)
+	console.log('FILES', files)
+	return files
 		.map(f => path.resolve(f))
 		.filter(isNotDirectory);
 }
 
 
-Promise.all(getFilesToUpload().map(uploadFile))
+const filePromises = getFilesToUpload().map(uploadFile);
+
+
+Promise.all(filePromises)
 	.then(function(){
-		console.log(colors.green('All files uploaded'));
+		console.log(colors.green(`${filePromises.length} files uploaded`));
 		process.exit(0);
 	})
 	.catch(function(err){
@@ -59,11 +65,3 @@ Promise.all(getFilesToUpload().map(uploadFile))
 		console.error(colors.red(err.stack));
 		process.exit(1);
 	});
-
-
-
-
-
-
-
-
