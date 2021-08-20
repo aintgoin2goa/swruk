@@ -46,6 +46,7 @@ function getCurrentVersion(){
 }
 
 function setCurrentVersion(version){
+	console.log('Current static file version: ' + version)
 	setPhpVersion(version);
 	setSassVersion(version);
 }
