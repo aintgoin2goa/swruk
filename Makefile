@@ -11,11 +11,11 @@ env:
 	echo "WP_ENV=localdev" >> .env
 
 db:
-	rm -rf db/backup db/data
+	rm -rf db
 	mkdir -p db/backup
 	mkdir -p db/data
-	# mkdir -p db/seed
-	# mysqldump -y --all-databases --host=$(SWRUK_DB_HOST) --password=$(SWRUK_DB_PASSWORD) --user=$(SWRUK_DB_USER)  > db/seed/dump.sql
+	mkdir -p db/seed
+	mysqldump -y --column-statistics=0 --host=$(SWRUK_DB_HOST) --password=$(SWRUK_DB_PASSWORD) --user=$(SWRUK_DB_USER) $(SWRUK_DB)  > db/seed/dump.sql
 	docker-compose up --force-recreate db
 
 
@@ -55,7 +55,7 @@ increment-static-version:
 	node scripts/incrementStaticVersion.js
 
 deploy-db:
-	mysqldump --host 127.0.0.1 --user=root --password=password $(SWRUK_DB) > db/backup/backup.sql
+	mysqldump --column-statistics=0 --host 127.0.0.1 --user=root --password=password $(SWRUK_DB) > db/backup/backup.sql
 	mysql --host=$(SWRUK_DB_HOST) --user=$(SWRUK_DB_USER) --password=$(SWRUK_DB_PASSWORD) $(SWRUK_DB) < db/backup/backup.sql
 
 deploy-wp:

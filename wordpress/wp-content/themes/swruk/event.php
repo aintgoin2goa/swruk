@@ -13,8 +13,8 @@
 			</div>
 
 			<ul role="tablist">
+			<li><a id="why_tab" role="tab" href="#why">Why</a></li>
 				<li><a id="details_tab" role="tab" href="#details">Details</a></li>
-				<li><a id="why_tab" role="tab" href="#why">Why</a></li>
 				<?php if(get_field('logistics')): ?>
 					<li><a id="logistics_tab" role="tab" href="#logistics">Logistics</a></li>
 				<?php endif; ?>
