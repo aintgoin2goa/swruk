@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   wp:
-    image: wordpress
+    image: wordpress:php7.1-apache
     restart: always
     volumes:
       - ./wordpress:/var/www/html:delegated
@@ -21,6 +21,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: heroku_70f1704fa056c3a
     volumes:
       - ./db/data:/var/lib/mysql
       - ./db/seed/:/docker-entrypoint-initdb.d
@@ -30,7 +31,7 @@ services:
   static:
     image: nginx:mainline-alpine
     volumes:
-      - ./static:/var/www/swruk:delegated
+      - ./static:/var/www/swruk
       - ./nginx/log/:/var/log/nginx/:delegated
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:

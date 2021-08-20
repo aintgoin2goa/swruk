@@ -6,25 +6,25 @@ app=swruk
 .PHONY: db
 
 env:
-	rm .env
+	rm -f .env
 	heroku config --app $(app) -s > .env
 	echo "WP_ENV=localdev" >> .env
 
 db:
-	rm -rf db
+	rm -rf db/backup db/data
 	mkdir -p db/backup
 	mkdir -p db/data
-	mkdir -p db/seed
-	mysqldump --all-databases --host=$(SWRUK_DB_HOST) --password=$(SWRUK_DB_PASSWORD) --user=$(SWRUK_DB_USER) > db/seed/dump.sql
+	# mkdir -p db/seed
+	# mysqldump -y --all-databases --host=$(SWRUK_DB_HOST) --password=$(SWRUK_DB_PASSWORD) --user=$(SWRUK_DB_USER)  > db/seed/dump.sql
 	docker-compose up --force-recreate db
 
 
 build-css:
-	node-sass src/scss/main.scss static/styles.css  --source-map-embed
-	node-sass src/scss/ie8.scss static/oldie.css  --source-map-embed
+	./node_modules/.bin/node-sass src/scss/main.scss static/styles.css  --source-map-embed
+	./node_modules/.bin/node-sass src/scss/ie8.scss static/oldie.css  --source-map-embed
 
 build-js:
-	webpack
+	./node_modules/.bin/webpack
 
 build-static: clean-static build-css build-js
 	node scripts/buildHTML.js
@@ -39,9 +39,9 @@ build-static-prod: clean-static
 	cp -r src/img/ static/img/
 	cp -r src/fonts/ static/fonts/
 	cp -r src/js/lib/ static/lib/
-	node-sass src/scss/main.scss static/styles.css --output-style compressed
-	node-sass src/scss/ie8.scss static/oldie.css --output-style compressed
-	webpack --optimize-minimize
+	./node_modules/.bin/node-sass src/scss/main.scss static/styles.css --output-style compressed
+	./node_modules/.bin/node-sass src/scss/ie8.scss static/oldie.css --output-style compressed
+	./node_modules/.bin/webpack --optimize-minimize
 
 clean-static:
 	rm -rf static/

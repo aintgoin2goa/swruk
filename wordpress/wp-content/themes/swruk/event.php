@@ -13,16 +13,14 @@
 			</div>
 
 			<ul role="tablist">
-				<li><a id="why_tab" role="tab" href="#why">Why</a></li>
 				<li><a id="details_tab" role="tab" href="#details">Details</a></li>
-				<li><a id="logistics_tab" role="tab" href="#logistics">Logistics</a></li>
+				<li><a id="why_tab" role="tab" href="#why">Why</a></li>
+				<?php if(get_field('logistics')): ?>
+					<li><a id="logistics_tab" role="tab" href="#logistics">Logistics</a></li>
+				<?php endif; ?>
 				<li><a id="supporting-orgs_tab" role="tab" href="#supporting-orgs">Supporters</a></li>
 			</ul>
 
-			<div id="why" class="tabpanel" role="tabpanel" aria-labelled-by="why_tab">
-				<h2>Why</h2>
-				<?php the_field('text'); ?>
-			</div>
 
 			<div id="details" class="tabpanel" role="tabpanel" aria-labelled-by="details_tab">
 				<h2>Details</h2>
@@ -46,10 +44,17 @@
 				</div>
 			</div>
 
-			<div id="logistics" class="tabpanel" role="tabpanel" aria-labelled-by="logistics_tab">
-				<h2>Logistics</h2>
-				<?php the_field('logistics'); ?>
+			<div id="why" class="tabpanel" role="tabpanel" aria-labelled-by="why_tab">
+				<h2>Why</h2>
+				<?php the_field('text'); ?>
 			</div>
+
+            <?php if(get_field('logistics')): ?>
+				<div id="logistics" class="tabpanel" role="tabpanel" aria-labelled-by="logistics_tab">
+					<h2>Logistics</h2>
+					<?php the_field('logistics'); ?>
+				</div>
+			<?php endif; ?>
 
 			<div id="supporting-orgs" class="tabpanel" role="tabpanel" aria-labelled-by="supporting-orgs_tab">
 				<h2>Supporting Organisations</h2>

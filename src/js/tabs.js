@@ -91,4 +91,7 @@ export function init(){
 		});
 		openFromUrl() || ul.querySelector('li:first-child a').click();
 	});
+	window.addEventListener('hashchange', function(){
+		openFromUrl();
+	})
 }
