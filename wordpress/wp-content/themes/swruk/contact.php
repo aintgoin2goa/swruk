@@ -47,7 +47,7 @@
                     <p><?php the_field('enquiries_text'); ?></p>
                     <div class="form-container column-1-2">
 
-						<form novalidate class="contact-form" method="post" action="<?php swruk_action_url('enquiry'); ?>">
+						<form novalidate class="contact-form" method="post" action="https://formspree.io/f/xleazjkb">
 							<fieldset class="hidden">
 								<legend>Contact Form</legend>
 								<?php
