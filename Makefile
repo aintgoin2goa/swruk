@@ -16,7 +16,7 @@ db:
 	mkdir -p db/data
 	mkdir -p db/seed
 	mysqldump -y --column-statistics=0 --host=$(SWRUK_DB_HOST) --password=$(SWRUK_DB_PASSWORD) --user=$(SWRUK_DB_USER) $(SWRUK_DB)  > db/seed/dump.sql
-	docker-compose up --force-recreate db
+	DOCKER_DEFAULT_PLATFORM=linux/amd64 docker-compose up --force-recreate db
 
 
 build-css:

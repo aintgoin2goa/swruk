@@ -1,0 +1,9 @@
+[2024-04-24 13:29:14] [class-ss-archive-creation-job.php:108] Not starting; we're already in the middle of a job
+[2024-04-24 13:29:22] [class-ss-admin-settings.php:545] Received request to cancel static archive generation
+[2024-04-24 13:29:22] [class-ss-archive-creation-job.php:217] Cancelling job; job is not done
+[2024-04-24 13:29:22] [class-ss-archive-creation-job.php:228] The queue isn't empty; overwriting current task with a cancel task
+[2024-04-24 13:29:27] [class-ss-url-fetcher.php:251] Fetching URL: http://swruk.local:8080
+[2024-04-24 13:38:06] [class-ss-admin-settings.php:545] Received request to cancel static archive generation
+[2024-04-24 13:38:06] [class-ss-archive-creation-job.php:217] Cancelling job; job is not done
+[2024-04-24 13:38:06] [class-ss-archive-creation-job.php:228] The queue isn't empty; overwriting current task with a cancel task
+[2024-04-24 13:38:36] [class-ss-url-fetcher.php:251] Fetching URL: http://swruk.org

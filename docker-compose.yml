@@ -2,14 +2,16 @@ version: "3.2"
 
 services:
   wp:
-    image: wordpress:php7.1-apache
+    image: wordpress:php7.4-apache
     restart: always
     volumes:
       - ./wordpress:/var/www/html:delegated
     ports:
       - "8080:80"
-    env_file: 
+    env_file:
       - .env
+    extra_hosts:
+      - "swruk.local:127.0.0.1"
     environment:
       SWRUK_DB_HOST: db
       SWRUK_DB_USER: root
@@ -36,4 +38,3 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "8181:80"
-    
